@@ -1,0 +1,11 @@
+.Header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4em;
+  min-height: 40vh;
+
+  svg {
+    max-width: 200px;
+  }
+}
