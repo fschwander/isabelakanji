@@ -3,9 +3,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif !important;
   //font-family: 'Josefin Sans', sans-serif;
-  background-color: $clr_green;
+  background-color: $clr_green !important;
 
   h1, h2, h3 {
     font-family: 'Josefin Sans', sans-serif;
