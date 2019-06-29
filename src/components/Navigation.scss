@@ -1,4 +1,63 @@
+@import '../variables';
+
 .Navigation {
   width: 100%;
 
+  .nav-link {
+    color: $clr_black;
+  }
+
+  .navbar-toggler {
+    background-color: unset;
+    position: relative;
+    border: unset;
+    padding: 0;
+    width: 30px;
+    height: 19px;
+
+    span {
+      position: absolute;
+      left: 0;
+      background-color: $clr_black;
+      height: 2px;
+      width: 100%;
+      transition: ease-in-out 200ms;
+
+
+      &:nth-of-type(1) {
+        transform-origin: top left;
+        top: 0;
+      }
+
+      &:nth-of-type(2) {
+        transform-origin: center center;
+        top: 50%;
+      }
+
+      &:nth-of-type(3) {
+        transform-origin: left bottom;
+        bottom: 0;
+      }
+    }
+
+    &.open {
+      span {
+        &:nth-of-type(1) {
+          width: 35.5px;
+          transform: rotate(30deg);
+        }
+
+        &:nth-of-type(2) {
+          left: 50%;
+          width: 0;
+          opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+          width: 35.5px;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+  }
 }

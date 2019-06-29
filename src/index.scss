@@ -1,28 +1,33 @@
 @import 'variables';
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif !important;
-  //font-family: 'Josefin Sans', sans-serif;
-  background-color: $clr_green !important;
+* {
+}
 
-  h1, h2, h3 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-  }
+html {
+  scroll-behavior: smooth;
 
-  h1 {
-    font-size: 6vmax;
-    margin: 2em 0 1em;
-  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: $clr_green !important;
+    font-family: 'Lato', sans-serif;
 
-  h2 {
-    margin: 0.5em 0;
+    h1, h2, h3 {
+      font-family: 'Josefin Sans', sans-serif !important;
+      text-align: center;
+    }
 
-  }
+    h1 {
+      font-size: 6vmax;
+      margin: 2em 0 1em;
+    }
 
-  p {
-    max-width: 600px;
+    h2 {
+      margin: 0.5em 0;
+    }
+
+    p {
+      max-width: 600px;
+    }
   }
 }

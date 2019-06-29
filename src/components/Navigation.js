@@ -1,6 +1,6 @@
 import './Navigation.scss';
 import * as React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import {Collapse, Nav, Navbar, NavbarBrand, NavItem, NavLink} from 'reactstrap';
 
 export default class Navigation extends React.Component {
 
@@ -24,7 +24,14 @@ export default class Navigation extends React.Component {
         <Navbar expand='md' light fixed='top'>
           <NavbarBrand href='/'>Yoga Isabel Akanji</NavbarBrand>
 
-          <NavbarToggler onClick={this.toggle}/>
+          {/*<NavbarToggler onClick={this.toggle}/>*/}
+
+          <div className={`navbar-toggler ${this.state.isOpen ? 'open' : 'collapsed'}`}
+               onClick={this.toggle}>
+            <span className="icon-bar"/>
+            <span className="icon-bar"/>
+            <span className="icon-bar"/>
+          </div>
 
           <Collapse isOpen={this.state.isOpen} navbar>
 
