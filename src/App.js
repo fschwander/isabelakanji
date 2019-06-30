@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import Header from "./components/Header";
 import About from "./components/About";
+import * as d3 from "d3-scale";
 
 export default class App extends React.Component {
 
@@ -16,11 +17,23 @@ export default class App extends React.Component {
   }
 
   handleScroll() {
-    console.log(window.scrollY);
-    this.topBackground.style.backgroundImage = `linear-gradient(to top, #9CC7C8 , #93BED5)`;
+    this.setTopBackground();
+  }
+
+  setTopBackground() {
+    let darkColor = '#589fd5';
+    let lightColor = '#93BED5';
+    let maxY = 300;
+    let scrollY = window.scrollY;
+
+    const colorScale = d3.scaleLinear().domain([0, maxY]).range([lightColor, darkColor]);
+    let color = value => value <= maxY ? colorScale(value) : darkColor;
+
+    this.topBackground.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY/2)} 80%, ${color(scrollY)} 90%)`;
   }
 
   componentDidMount() {
+    this.setTopBackground();
     window.addEventListener('scroll', this.handleScroll)
   }
 
