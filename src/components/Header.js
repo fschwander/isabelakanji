@@ -12,8 +12,9 @@ export default class Header extends React.Component {
     this.scaleOpacityOnScroll = this.scaleOpacityOnScroll.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
 
-    this.logoContainer = React.createRef();
-    this.topBackground = React.createRef();
+    this.rootElement = React.createRef();
+    this.logoContainerElement = React.createRef();
+    this.backgroundElement = React.createRef();
   }
 
   handleScroll() {
@@ -24,19 +25,19 @@ export default class Header extends React.Component {
 
   scaleSizeOnScroll() {
     let scrollY = window.scrollY;
-    let maxY = 500;
+    let maxY = this.rootElement.offsetHeight * 0.9;
 
     const sizeScale = d3.scaleLinear().domain([0, 200]).range([1, 1.4]);
     let yPos = (scrollY <= maxY ? scrollY : maxY) / 4;
-    this.logoContainer.style.transform = `scale(${sizeScale(scrollY)}) translateY(${yPos}px)`;
+    this.logoContainerElement.style.transform = `scale(${sizeScale(scrollY)}) translateY(${yPos}px)`;
   }
 
   scaleOpacityOnScroll() {
     let scrollY = window.scrollY;
-    let maxY = 500;
+    let maxY = this.rootElement.offsetHeight * 0.9;
 
     const opacityScale = d3.scaleLinear().domain([maxY-100, maxY]).range([1, 0]);
-    this.logoContainer.style.opacity = opacityScale(scrollY);
+    this.logoContainerElement.style.opacity = opacityScale(scrollY);
   }
 
   scaleColorOnScroll() {
@@ -48,8 +49,8 @@ export default class Header extends React.Component {
     const colorScale = d3.scaleLinear().domain([0, maxY]).range([lightColor, darkColor]);
     let color = value => value <= maxY ? colorScale(value) : darkColor;
 
-    this.topBackground.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
-    this.logoContainer.style.border = `1px solid ${color(scrollY)}`;
+    this.backgroundElement.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
+    this.logoContainerElement.style.border = `1px solid ${color(scrollY)}`;
 
   }
 
@@ -65,11 +66,11 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div id='Header' className='Header'>
-        <div className='logoContainer' ref={el => this.logoContainer = el}>
+      <div id='Header' className='Header' ref={el => this.rootElement = el}>
+        <div className='logoContainer' ref={el => this.logoContainerElement = el}>
           <Logo/>
         </div>
-        <span className='topBackground' ref={el => this.topBackground = el}/>
+        <span className='topBackground' ref={el => this.backgroundElement = el}/>
 
         <h1>Isabel Akanji</h1>
       </div>
