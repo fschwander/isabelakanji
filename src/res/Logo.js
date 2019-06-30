@@ -3,7 +3,7 @@ import React from "react";
 export default function Logo() {
 
   let style = {},
-    fill = "#000",
+    fill = "#222",
     background = '#fff',
     width = "100%",
     className = "",

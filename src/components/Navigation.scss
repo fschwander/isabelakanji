@@ -5,6 +5,7 @@
 
   .nav-link {
     color: $clr_black;
+    border-bottom: unset;
   }
 
   .navbar-toggler {
@@ -19,7 +20,7 @@
       position: absolute;
       left: 0;
       background-color: $clr_black;
-      height: 2px;
+      height: 1px;
       width: 100%;
       transition: ease-in-out 200ms;
 

@@ -28,6 +28,20 @@ html {
 
     p {
       max-width: 600px;
+      line-height: 1.9em;
+    }
+
+    a {
+      color: $clr_black;
+      padding-bottom: 0.2em;
+      border-bottom: 0.2em solid white;
+
+
+      &:hover {
+        color: $clr_red_dark;
+        text-decoration: none;
+
+      }
     }
   }
 }

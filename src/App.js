@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Introduction from "./components/Introduction";
 import Header from "./components/Header";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
       <Header/>
       <Introduction/>
       <About/>
+      <Contact/>
     </div>
   );
 }

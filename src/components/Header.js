@@ -30,10 +30,12 @@ export default class Header extends React.Component {
 
     const opacityScale = d3.scaleLinear().domain([maxY-100, maxY]).range([1, 0]);
     this.logoContainer.style.opacity = opacityScale(scrollY);
+    // this.logoContainer.style.opacity = scrollY >= maxY ? '0' : '1';
+
   }
 
   setTopBackground() {
-    let darkColor = '#589fd5';
+    let darkColor = '#4791B8';
     let lightColor = '#93BED5';
     let maxY = 300;
     let scrollY = window.scrollY;
