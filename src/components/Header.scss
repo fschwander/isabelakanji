@@ -5,6 +5,14 @@
   padding-top: 4em;
   min-height: 40vh;
 
+  .topBackground {
+    position: fixed;
+    top: -56px;
+    z-index: -1;
+    height: 50vh;
+    width: 100vw;
+  }
+
   svg {
     max-width: 200px;
   }
