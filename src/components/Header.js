@@ -28,7 +28,7 @@ export default class Header extends React.Component {
     let yPos = (scrollY <= maxY ? scrollY : maxY) / 4;
     this.logoContainer.style.transform = `scale(${sizeScale(scrollY)}) translateY(${yPos}px)`;
 
-    const opacityScale = d3.scaleLinear().domain([300, maxY]).range([1, 0]);
+    const opacityScale = d3.scaleLinear().domain([maxY-100, maxY]).range([1, 0]);
     this.logoContainer.style.opacity = opacityScale(scrollY);
   }
 
