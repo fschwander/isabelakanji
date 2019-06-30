@@ -15,7 +15,9 @@
 
   .logoContainer {
     transform-origin: bottom center;
-    //transition: opacity 400ms ease-in-out;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px white;
+
     transition: opacity 50ms linear;
     z-index: -1;
 
