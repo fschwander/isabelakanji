@@ -1,0 +1,75 @@
+@import '../variables';
+
+.Contact {
+  a {
+    color: $clr_white;
+    border-bottom: unset;
+  }
+
+  .bubbleContainer {
+    .bubble {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background-color: $clr_black;
+      color: $clr_white;
+    }
+
+    .personBubble {
+      transform: translate(-2em, 2em) rotate(-8deg);
+      width: 14em;
+      height: 14em;
+    }
+
+    .studioContainer {
+      transform: translateY(-3em);
+
+      .addressBubble {
+        width: 12em;
+        height: 12em;
+      }
+
+      .studioBubble {
+        transform: translate(7em, 5em) rotate(20deg);
+        width: 8em;
+        height: 8em;
+      }
+    }
+  }
+
+  @media screen and (min-width: 370px) and (max-width: 599px) {
+    .bubbleContainer {
+      display: flex;
+      flex-direction: row;
+
+      .personBubble {
+        transform: translateX(-5em) rotate(-10deg);
+      }
+
+      .studioContainer {
+        position: absolute;
+        transform: translate(3em, 3em);
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .bubbleContainer {
+
+      .personBubble {
+        transform: translateX(-10vw);
+      }
+
+      .studioContainer {
+        position: absolute;
+        transform: translate(10vw, -16em);
+
+        .studioBubble {
+          transform: translate(7em, 4em) rotate(20deg);
+        }
+      }
+    }
+  }
+}
