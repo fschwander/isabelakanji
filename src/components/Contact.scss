@@ -1,12 +1,18 @@
 @import '../variables';
 
 .Contact {
+  width: 100vw;
+
   a {
     color: $clr_white;
     line-height: 2em;
   }
 
   .bubbleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
     .bubble {
       display: flex;
       flex-direction: column;
@@ -20,13 +26,13 @@
     }
 
     .personBubble {
-      transform: translate(-2em, 2em) rotate(-8deg);
-      width: 14em;
+      transform: translate(1em, 0) rotate(-8deg);
+      min-width: 14em;
       height: 14em;
     }
 
     .studioContainer {
-      transform: translateY(-3em);
+      transform: translate(-5em, 3em);
 
       .addressBubble {
         width: 12em;
@@ -34,7 +40,7 @@
       }
 
       .studioBubble {
-        transform: translate(7em, 5em) rotate(20deg);
+        transform: translate(7em, 4em) rotate(20deg);
         width: 8em;
         height: 8em;
       }
@@ -47,12 +53,11 @@
       flex-direction: row;
 
       .personBubble {
-        transform: translateX(-5em) rotate(-10deg);
+        transform: translateX(0) rotate(-10deg);
       }
 
       .studioContainer {
-        position: absolute;
-        transform: translate(3em, 3em);
+        transform: translate(-4em, 3em);
       }
     }
   }
@@ -60,12 +65,11 @@
     .bubbleContainer {
 
       .personBubble {
-        transform: translateX(-10vw);
+        transform: translateX(-4vw);
       }
 
       .studioContainer {
-        position: absolute;
-        transform: translate(10vw, -16em);
+        transform: translate(-2vw, 1em);
 
         .studioBubble {
           transform: translate(7em, 4em) rotate(20deg);
