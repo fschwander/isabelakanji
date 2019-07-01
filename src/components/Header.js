@@ -72,7 +72,8 @@ export default class Header extends React.Component {
         </div>
         <span className='topBackground' ref={el => this.backgroundElement = el}/>
 
-        <h1>Isabel Akanji</h1>
+        <div className='special-header'>Yoga</div>
+        <h1 className='special-subheader'>Isabel Akanji</h1>
       </div>
     )
   }

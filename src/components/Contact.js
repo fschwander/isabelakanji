@@ -21,7 +21,7 @@ export default function Contact() {
         </div>
         <div className='studioContainer'>
           <div className='studioBubble bubble'>
-            <span>Studio</span>
+            <span>im Studio</span>
             <span>{studioLink}</span>
           </div>
           <div className='addressBubble bubble'>
