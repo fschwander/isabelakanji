@@ -34,7 +34,7 @@ export default class Header extends React.Component {
 
   scaleOpacityOnScroll() {
     let scrollY = window.scrollY;
-    let maxY = this.rootElement.offsetHeight * 0.9;
+    let maxY = this.rootElement.offsetHeight * 0.4;
 
     const opacityScale = d3.scaleLinear().domain([maxY-100, maxY]).range([1, 0]);
     this.logoContainerElement.style.opacity = opacityScale(scrollY);

@@ -3,7 +3,7 @@
 .Contact {
   a {
     color: $clr_white;
-    border-bottom: unset;
+    line-height: 2em;
   }
 
   .bubbleContainer {
@@ -15,7 +15,8 @@
 
       border-radius: 50%;
       background-color: $clr_black;
-      color: $clr_white;
+      background-image: linear-gradient(to bottom, $clr_green_dark, $clr_green);
+      color: $clr_black;
     }
 
     .personBubble {

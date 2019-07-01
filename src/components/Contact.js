@@ -16,15 +16,15 @@ export default function Contact() {
       <div className='bubbleContainer'>
         <div className='personBubble bubble'>
           <span>Isabel Akanji</span>
-          <span>{emailLink}</span>
           <span>077 445 23 47</span>
+          <span>{emailLink}</span>
         </div>
         <div className='studioContainer'>
           <div className='studioBubble bubble'>
+            <span>Studio</span>
             <span>{studioLink}</span>
           </div>
           <div className='addressBubble bubble'>
-            <span>Adresse</span>
             <span>{locationLink}</span>
             <span>8405 Winterthur</span>
           </div>
