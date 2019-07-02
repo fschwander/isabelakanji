@@ -7,15 +7,19 @@
   width: 100vw;
   overflow: hidden;
 
-  .special-header {
-    text-transform: uppercase;
-    font-size: 13vmax;
-  }
+  .headerContainer {
+    margin-top: 2em;
 
-  .special-subheader {
-    font-size: 5vmax;
-    transform: translateY(-0.4em);
-    margin-top: unset;
+    .specialHeader {
+      text-transform: uppercase;
+      font-size: 13vmax;
+    }
+
+    .specialSubheader {
+      font-size: 5vmax;
+      transform: translateY(-0.4em);
+      margin-top: unset;
+    }
   }
 
   .topBackground {
