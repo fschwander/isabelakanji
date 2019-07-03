@@ -25,7 +25,7 @@
   .topBackground {
     position: fixed;
     top: -56px;
-    z-index: -2;
+    z-index: -1;
     height: 50vh;
     width: 100vw;
   }
@@ -36,7 +36,7 @@
     box-shadow: 0 0 0 10px white;
 
     transition: opacity 50ms linear;
-    z-index: -1;
+    //z-index: -1;
 
     .Logo {
       max-width: 50vw;

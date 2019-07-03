@@ -67,10 +67,12 @@ export default class Header extends React.Component {
   render() {
     return (
       <div id='Header' className='Header' ref={el => this.rootElement = el}>
+
+        <span className='topBackground' ref={el => this.backgroundElement = el}/>
+
         <div className='logoContainer' ref={el => this.logoContainerElement = el}>
           <Logo/>
         </div>
-        <span className='topBackground' ref={el => this.backgroundElement = el}/>
 
         <div className='headerContainer'>
           <div className='specialHeader'>Yoga</div>

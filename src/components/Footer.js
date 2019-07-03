@@ -11,7 +11,9 @@ export default function Footer() {
 
   return (
     <div id='Footer' className='Footer'>
-      <h2>Anmelden</h2>
+      <h2>Anmeldung</h2>
+
+      <p>Anmeldungen für Schnupper-, Einzel- und Privatstunden spätestens bis Sonntagabend per Mail oder Telefon. Danke!</p>
 
       <div className='bubbleContainer'>
         <div className='personBubble bubble'>
