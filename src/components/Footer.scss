@@ -1,6 +1,6 @@
 @import '../variables';
 
-.Contact {
+.Footer {
   width: 100vw;
 
   a {
@@ -14,18 +14,6 @@
     justify-content: center;
     overflow: hidden;
     padding-bottom: 3em;
-
-    .bubble {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-      background-color: $clr_black;
-      background-image: linear-gradient(to bottom, $clr_green_dark, $clr_green);
-      color: $clr_black;
-    }
 
     .personBubble {
       transform: translate(1em, 0) rotate(-8deg);

@@ -5,4 +5,8 @@
   margin: 0 1em;
   padding-top: 56px;
   padding-bottom: 10vh;
+
+  .contentContainer > * {
+    padding: 2em 0 3em;
+  }
 }

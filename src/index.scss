@@ -20,11 +20,19 @@ html {
     }
 
     h2 {
-      margin: 0.5em 0;
+      margin: 2em 0;
+    }
+
+    h3 {
+      margin: 1em 0 0.5em;
+      font-size: 1.2em;
     }
 
     p {
-      max-width: 600px;
+      margin: auto auto 0.8em;
+      text-align: center;
+      width: 500px;
+      max-width: 90%;
       line-height: 1.9em;
     }
 
@@ -37,8 +45,19 @@ html {
       &:hover {
         color: $clr_red_dark;
         text-decoration: none;
-
       }
+    }
+
+    .bubble {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background-color: $clr_black;
+      background-image: linear-gradient(to bottom, $clr_green_dark, $clr_green);
+      color: $clr_black;
     }
   }
 }

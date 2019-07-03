@@ -24,8 +24,6 @@ export default class Navigation extends React.Component {
         <Navbar expand='md' light fixed='top'>
           <NavbarBrand href='/'>Yoga Isabel Akanji</NavbarBrand>
 
-          {/*<NavbarToggler onClick={this.toggle}/>*/}
-
           <div className={`navbar-toggler ${this.state.isOpen ? 'open' : 'collapsed'}`}
                onClick={this.toggle}>
             <span className="icon-bar"/>
@@ -37,10 +35,13 @@ export default class Navigation extends React.Component {
 
             <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href='#Introduction'>Einleitung</NavLink>
+                <NavLink href='#Introduction'>Hatha Yoga</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='#About'>About</NavLink>
+                <NavLink href='#Events'>Angebot & Preise</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href='#Footer'>Anmeldung</NavLink>
               </NavItem>
 
             </Nav>

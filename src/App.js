@@ -2,10 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './App.scss';
 import Navigation from "./components/Navigation";
-import Introduction from "./components/Introduction";
 import Header from "./components/Header";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Content from "./components/Content";
 
 export default function App() {
 
@@ -13,9 +12,10 @@ export default function App() {
     <div className="App">
       <Navigation/>
       <Header/>
-      <Introduction/>
-      <About/>
-      <Contact/>
+      <div className='contentContainer'>
+        <Content/>
+        <Footer/>
+      </div>
     </div>
   );
 }

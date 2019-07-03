@@ -1,7 +1,7 @@
-import './Contact.scss'
+import './Footer.scss'
 import React from 'react';
 
-export default function Contact() {
+export default function Footer() {
   let emailLink = <a href='mailto:kontakt@isabelakanji.ch'>E-Mail</a>;
   let studioLink = <a href='https://www.yoga-pilates-winterthur.ch/'>Yoga & Pilates</a>
 
@@ -10,8 +10,8 @@ export default function Contact() {
 
 
   return (
-    <div className='Contact'>
-      <h2>Kontakt</h2>
+    <div id='Footer' className='Footer'>
+      <h2>Anmelden</h2>
 
       <div className='bubbleContainer'>
         <div className='personBubble bubble'>
