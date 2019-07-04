@@ -25,18 +25,17 @@
   .topBackground {
     position: fixed;
     top: -56px;
-    z-index: -1;
-    height: 50vh;
+    height: 80vh;
     width: 100vw;
+    z-index: -2;
   }
 
   .logoContainer {
     transform-origin: bottom center;
     border-radius: 50%;
     box-shadow: 0 0 0 10px white;
-
     transition: opacity 50ms linear;
-    //z-index: -1;
+    z-index: -1;
 
     .Logo {
       max-width: 50vw;

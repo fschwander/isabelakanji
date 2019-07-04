@@ -5,14 +5,17 @@ import './Content.scss';
 export default function Content() {
 
   return (
-    <div id='Content' className='Content'>
+    <Container id='Content' className='Content'>
       <Introduction/>
       <Events/>
-    </div>
+    </Container>
   )
 }
 
 function Introduction() {
+  let googleStudioLocation = 'https://www.google.com/maps/place/Gr%C3%BCntalstrasse+24,+8405+Winterthur/@47.4853956,8.7672866,19.28z/data=!4m5!3m4!1s0x479a99de5e600857:0x205bd682ed3e7a99!8m2!3d47.4854459!4d8.7677075';
+  let locationLink = <a target='_blank' rel='noopener noreferrer' href={googleStudioLocation}>Grüntalstrasse 24</a>
+
   return (
     <div id='Introduction' className='Introduction'>
       <h2>Sanfte Hatha Yoga-Lektionen mit Isabel Akanji</h2>
@@ -24,6 +27,17 @@ function Introduction() {
         unterwegs oder zu Hause.</p>
       <p>Nach jeder Lektion verspüren wir den Yoga-Effekt und verlassen den Raum
         entspannt und voller Kraft für den Tag.</p>
+
+      <Row className='rendezvousContainer'>
+        <Col sm={1} md={2}/>
+        <Col sm={3} md={2}>
+          <h3 className='bubble'>Wo?</h3>
+        </Col>
+        <Col sm={7} md={5}>
+          <p>...im Yoga & Pilates Studio an der {locationLink}, 8405 Winterthur beim Bahnhof Seen.</p>
+        </Col>
+        <Col sm={1} md={3}/>
+      </Row>
     </div>
   )
 }
@@ -33,41 +47,43 @@ function Events() {
     <div id='Events' className='Events'>
       <h2>Angebot & Preise</h2>
 
-      <Container>
-        <Row>
-          <Col md={4}>
-            <div className='semesterContainer bubble'>
-              <h3>Quartal</h3>
-              <div>19. August – 30. September 2019</div>
-            </div>
+      <Row>
+        <Col md={4}>
+          <div className='semesterContainer bubble'>
+            <p>Anlassdaten</p>
+            <h3>Spätsommerblock</h3>
+            <p>19. August – 30. September 2019</p>
+          </div>
 
-          </Col>
+        </Col>
 
-          <Col md={4}>
-            <h3>Hatha Yoga</h3>
-            <div>(geeignet für AnfängerInnen und Fortgeschrittene)</div>
-            <p>Montag, 10:00-11:15</p>
+        <Col md={4}>
+          <h3>Hatha Yoga</h3>
+          <p>Montag, 10:00-11:15</p>
 
-            <h3>Yoga für SeniorInnen</h3>
-            <div>Montag, 08:30-09:45</div>
+          <h3>Yoga für SeniorInnen</h3>
+          <div>Montag, 08:30-09:45</div>
 
-            <div className='padding-top'>Einsteigen ist jederzeit möglich. Es sind keine Vorkenntnisse nötig.</div>
-          </Col>
+          <p className='padding-top'>Alle Lektionen sind geeignet für AnfängerInnen
+            und Fortgeschrittene.</p>
+          <p>Einsteigen ist jederzeit möglich. </p>
 
-          <Col md={4}>
-            <h3>Privatstunden</h3>
-            <div>Termine nach Absprache</div>
 
-            <div className='pricesContainer bubble'>
-              <h3>Preise</h3>
-              <div>Einzeleintritt 32.–</div>
-              <div>ganzes Quartal 182.–</div>
-              <div>Privatlektion 100.–</div>
-              <div>Schnupperstunde gratis</div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+        </Col>
+
+        <Col md={4}>
+          <h3>Privatstunden</h3>
+          <div>Termine möglich am Montag, Zeitpunkt nach Absprache.</div>
+
+          <div className='pricesContainer bubble'>
+            <h3>Preise</h3>
+            <div>Einzeleintritt 32.–</div>
+            <div>ganzer Spätsommerblock 182.–</div>
+            <div>Privatlektion 100.–</div>
+            <div>Schnupperstunde gratis</div>
+          </div>
+        </Col>
+      </Row>
     </div>
   )
 }

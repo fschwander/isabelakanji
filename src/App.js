@@ -14,8 +14,8 @@ export default function App() {
       <Header/>
       <div className='contentContainer'>
         <Content/>
-        <Footer/>
       </div>
+      <Footer/>
     </div>
   );
 }

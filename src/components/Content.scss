@@ -7,6 +7,23 @@
     padding-top: 1.5em;
   }
 
+  .rendezvousContainer {
+    display: flex;
+    align-items: center;
+
+    p {
+      padding: 0;
+      margin: auto;
+    }
+
+    .bubble {
+      transform: rotate(-4deg);
+      margin: auto;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   .semesterContainer {
     transform: rotate(-4deg);
     margin: auto;
@@ -19,10 +36,5 @@
     width: 240px;
     height: 240px;
     transform: rotate(4deg);
-
-    h3 {
-      transform: translateY(-0.5em);
-      margin: 0;
-    }
   }
 }

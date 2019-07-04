@@ -29,10 +29,9 @@ html {
     }
 
     p {
-      margin: auto auto 0.8em;
+      margin: 0 auto 0.8em;
+      max-width: 500px;
       text-align: center;
-      width: 500px;
-      max-width: 90vw;
       line-height: 1.9em;
     }
 
@@ -58,6 +57,11 @@ html {
       background-color: $clr_black;
       background-image: linear-gradient(to bottom, $clr_green_dark, $clr_green);
       color: $clr_black;
+
+      h3 {
+        transform: translateY(-0.5em);
+        margin: 0;
+      }
     }
   }
 }
