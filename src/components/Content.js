@@ -8,6 +8,7 @@ export default function Content() {
     <Container id='Content' className='Content'>
       <Introduction/>
       <Events/>
+      <SignUp/>
     </Container>
   )
 }
@@ -84,6 +85,16 @@ function Events() {
           </div>
         </Col>
       </Row>
+    </div>
+  );
+}
+
+function SignUp() {
+  return (
+    <div id='SignUp' className='SignUp'>
+      <h2>Anmeldung</h2>
+      <p>Anmeldungen für Schnupper-, Einzel- und Privatstunden spätestens bis Sonntagabend per Mail oder Telefon.
+        Danke!</p>
     </div>
   )
 }
