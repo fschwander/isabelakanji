@@ -50,7 +50,7 @@ export default class Header extends React.Component {
     let color = value => value <= maxY ? colorScale(value) : darkColor;
 
     this.backgroundElement.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
-    this.logoContainerElement.style.border = `1px solid ${color(scrollY)}`;
+    this.logoContainerElement.style.border = `2px solid ${color(scrollY)}`;
 
   }
 

@@ -9,6 +9,7 @@
 
   .headerContainer {
     margin-top: 2em;
+    z-index: 1000;
 
     .specialHeader {
       text-transform: uppercase;
@@ -27,7 +28,7 @@
     top: -56px;
     height: 80vh;
     width: 100vw;
-    z-index: -2;
+    z-index: -1000;
   }
 
   .logoContainer {
@@ -35,10 +36,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 10px white;
     transition: opacity 50ms linear;
-    z-index: -1;
-
-    .Logo {
-      max-width: 50vw;
-    }
+    width: 300px;
+    max-width: 50vw;
   }
 }
