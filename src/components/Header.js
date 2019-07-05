@@ -26,10 +26,15 @@ export default class Header extends React.Component {
   scaleSizeOnScroll() {
     let scrollY = window.scrollY;
     let maxY = this.rootElement.offsetHeight * 0.9;
+    let yPos = (scrollY <= maxY ? scrollY : maxY) / 4;
 
     const sizeScale = d3.scaleLinear().domain([0, 200]).range([1, 1.4]);
-    let yPos = (scrollY <= maxY ? scrollY : maxY) / 4;
     this.logoContainerElement.style.transform = `scale(${sizeScale(scrollY)}) translateY(${yPos}px)`;
+
+    const sizeLogoScale = d3.scaleLinear().domain([0, 200]).range([1, 1.2]);
+    const logo = document.getElementById("logo-shape");
+    logo.style.transform = `scale(${sizeLogoScale(scrollY)})`;
+    logo.style.transformOrigin = `center`;
   }
 
   scaleOpacityOnScroll() {
