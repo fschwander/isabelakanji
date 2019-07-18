@@ -23,9 +23,10 @@
     }
   }
 
-  .topBackground {
+  .topBackgroundElement {
     position: fixed;
     top: -56px;
+    left: 0;
     height: 80vh;
     width: 100vw;
     z-index: -1000;
@@ -35,8 +36,11 @@
     transform-origin: bottom center;
     border-radius: 50%;
     box-shadow: 0 0 0 10px white;
-    transition: opacity 50ms linear;
     width: 300px;
     max-width: 50vw;
+  }
+
+  .logoContainer, #logo-shape {
+    transition: 50ms linear;
   }
 }

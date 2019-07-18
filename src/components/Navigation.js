@@ -41,7 +41,7 @@ export default class Navigation extends React.Component {
                 <NavLink href='#Events'>Angebot & Preise</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='#Footer'>Anmelden</NavLink>
+                <NavLink href='#SignUp'>Anmelden</NavLink>
               </NavItem>
 
             </Nav>

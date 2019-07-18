@@ -7,10 +7,10 @@ html {
     margin: 0;
     padding: 0;
     background-color: $clr_green !important;
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, Avenir sans-serif;
 
     h1, h2, h3 {
-      font-family: 'Josefin Sans', sans-serif !important;
+      font-family: 'Josefin Sans', Avenir, sans-serif !important;
       text-align: center;
     }
 
@@ -20,7 +20,7 @@ html {
     }
 
     h2 {
-      margin: 2em 0;
+      padding: 2em 0;
     }
 
     h3 {

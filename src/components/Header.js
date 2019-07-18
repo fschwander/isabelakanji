@@ -14,7 +14,7 @@ export default class Header extends React.Component {
 
     this.rootElement = React.createRef();
     this.logoContainerElement = React.createRef();
-    this.backgroundElement = React.createRef();
+    this.topBackgroundElement = React.createRef();
   }
 
   handleScroll() {
@@ -54,7 +54,7 @@ export default class Header extends React.Component {
     const colorScale = d3.scaleLinear().domain([0, maxY]).range([lightColor, darkColor]);
     let color = value => value <= maxY ? colorScale(value) : darkColor;
 
-    this.backgroundElement.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
+    this.topBackgroundElement.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
     this.logoContainerElement.style.border = `2px solid ${color(scrollY)}`;
 
   }
@@ -73,7 +73,7 @@ export default class Header extends React.Component {
     return (
       <div id='Header' className='Header' ref={el => this.rootElement = el}>
 
-        <span className='topBackground' ref={el => this.backgroundElement = el}/>
+        <span className='topBackgroundElement' ref={el => this.topBackgroundElement = el}/>
 
         <div className='logoContainer' ref={el => this.logoContainerElement = el}>
           <Logo/>
