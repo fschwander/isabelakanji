@@ -43,4 +43,12 @@
   .logoContainer, #logo-shape {
     transition: 50ms linear;
   }
+
+  @media screen and (min-aspect-ratio: 3/2) {
+    padding-top: 1em;
+
+    .headerContainer {
+      margin-top: 0;
+    }
+  }
 }

@@ -5,15 +5,14 @@ export default function Logo() {
   let style = {},
     fill = "#333",
     background = '#fff',
-    width = "100%",
     className = "",
     viewBox = "0 0 256 256";
 
   return (
     <svg className={`Logo icon ${className || ""}`}
-         width={width}
+         width="100%"
+         height="100%"
          style={style}
-         height={width}
          viewBox={viewBox}
          xmlns="http://www.w3.org/2000/svg"
          xmlnsXlink="http://www.w3.org/1999/xlink">
