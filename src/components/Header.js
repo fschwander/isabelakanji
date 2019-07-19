@@ -46,16 +46,22 @@ export default class Header extends React.Component {
   }
 
   scaleColorOnScroll() {
-    let darkColor = '#4791B8';
-    let lightColor = '#93BED5';
+    let lightBlue = '#93BED5';
+    let darkBlue = '#4791B8';
+    let lightGreen = '#9CC7C8';
+    let darkGreen = '#5BA2A4';
+
     let maxY = 300;
     let scrollY = window.scrollY;
 
-    const colorScale = d3.scaleLinear().domain([0, maxY]).range([lightColor, darkColor]);
-    let color = value => value <= maxY ? colorScale(value) : darkColor;
+    const topColorScale = d3.scaleLinear().domain([0, maxY]).range([darkBlue, darkGreen]);
+    const bottomColorScale = d3.scaleLinear().domain([0, maxY]).range([lightGreen, lightBlue]);
 
-    this.topBackgroundElement.style.backgroundImage = `linear-gradient(to top, #9CC7C8, ${color(scrollY / 2)} 80%, ${color(scrollY)} 90%)`;
-    this.logoContainerElement.style.border = `2px solid ${color(scrollY)}`;
+    let topColor = value => value <= maxY ? topColorScale(value) : topColorScale(maxY);
+    let bottomColor = value => value <= maxY ? bottomColorScale(value) : bottomColorScale(maxY);
+
+    this.topBackgroundElement.style.backgroundImage = `linear-gradient(to bottom, ${topColor(scrollY)} 10%, ${bottomColor(scrollY/4)} 70%)`;
+    this.logoContainerElement.style.border = `2px solid ${topColor(scrollY)}`;
 
   }
 

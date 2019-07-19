@@ -90,7 +90,7 @@ function SignUp() {
   return (
     <div id='SignUp' className='SignUp'>
       <h2>Anmelden</h2>
-      <p>Anmeldungen für Schnupper-, Einzel- und Privatstunden spätestens bis Sonntagabend per <a
+      <p>Anmeldungen für Schnupper-, Einzel- und Privatstunden bis Sonntagabend per <a
         href='mailto:yoga@isabelakanji.ch'>E-Mail</a> oder Telefon. Danke!</p>
     </div>
   )
