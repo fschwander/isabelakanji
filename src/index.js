@@ -2,8 +2,8 @@
 import 'react-app-polyfill/ie9';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+import {render} from 'react-snapshot';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<App/>, document.getElementById('root'));
