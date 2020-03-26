@@ -1,4 +1,4 @@
-import React, {RefObject, useEffect, useState} from "react";
+import React, {RefObject, useEffect} from "react";
 import Logo from "../../../res/Logo";
 import './Header.scss';
 import * as d3 from "d3-scale";
@@ -25,15 +25,17 @@ export const Header: React.FC<HeaderInterface> = props => {
       const sizeScale = d3.scaleLinear().domain([0, 200]).range([1, 1.4]);
       logoContainerElement.current.style.transform = `scale(${sizeScale(scrollTop)}) translateY(${yPos}px)`;
 
-      // const sizeLogoScale = d3.scaleLinear().domain([0, 200]).range([1, 1.2]);
-      // const logo = document.getElementById("logo-shape");
-      // logo.style.transform = `scale(${sizeLogoScale(scrollTop)})`;
-      // logo.style.transformOrigin = `center`;}
+      const sizeLogoScale = d3.scaleLinear().domain([0, 200]).range([1, 1.2]);
+      const logo = document.getElementById("logo-shape");
+      if (logo) {
+        logo.style.transform = `scale(${sizeLogoScale(scrollTop)})`;
+        logo.style.transformOrigin = `center`;
+      }
     }
   }
 
   const scaleOpacityOnScroll = () => {
-    if(rootElement.current && logoContainerElement.current) {
+    if (rootElement.current && logoContainerElement.current) {
       let maxY = rootElement.current.offsetHeight * 0.4;
 
       const opacityScale = d3.scaleLinear().domain([maxY - 100, maxY]).range([1, 0]);
