@@ -1,0 +1,41 @@
+$animDuration: .8s;
+
+.NavContainer {
+  display: flex;
+
+  .nav-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 5vw;
+    height: 100vh;
+    transition: width $animDuration ease-in-out, filter $animDuration * 1.5 ease-in-out;
+    background-color: deepskyblue;
+
+    p {
+      border-left: 2px solid transparent;
+      text-align: center;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+    }
+
+    &.active {
+      width: 100%;
+      cursor: unset;
+
+      p {
+        opacity: 0;
+      }
+    }
+
+    &.not-active {
+      filter: brightness(70%);
+
+      &:hover {
+        p {
+          border-left: 2px solid black;
+        }
+      }
+    }
+  }
+}
