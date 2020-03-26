@@ -1,21 +1,24 @@
 import React, {useState} from "react";
-import './NavContainer.scss';
+import './DrawerNavContainer.scss';
 import {YogaPage} from "../pages/yoga/YogaPage";
 
-export const NavContainer: React.FC = () => {
+export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const navItems = ['Yoga', 'Schnaps', 'Foo'];
 
   return (
-    <div className={`NavContainer`}>
+    <div className={`DrawerNavContainer`}>
       {navItems.map((item, i) => {
           return (
-            <div className={`register-nav-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
+            <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
                  onClick={() => setActiveIndex(i)}
                  key={item + i}>
 
-                <div className={'register-label button'} >{item}</div>
+              <div className={'drawer-label button'}>{item}</div>
+
+              <div className={'drawer-page-container'}>
                 <YogaPage/>
+              </div>
 
             </div>
           )

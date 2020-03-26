@@ -1,19 +1,19 @@
 $animDuration: .8s;
 
-.NavContainer {
+.DrawerNavContainer {
   display: flex;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 
-  .page {
+  .drawer-page-container {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
 
-  .register-nav-item {
+  .drawer-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -22,7 +22,7 @@ $animDuration: .8s;
     transition: width $animDuration ease-in-out, filter $animDuration * 1.5 ease-in-out;
     background-color: deepskyblue; // todo: remove
 
-    .register-label {
+    .drawer-label {
       z-index: 1000;
       margin: 1rem;
       border-left: 2px solid transparent;

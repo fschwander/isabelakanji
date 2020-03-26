@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import {NavContainer} from "./container/NavContainer";
+import {DrawerNavContainer} from "./container/DrawerNavContainer";
 
 function App() {
   return (
     <div className="App">
-      <NavContainer/>
+      <DrawerNavContainer/>
     </div>
   );
 }
