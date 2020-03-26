@@ -12,7 +12,7 @@ export const YogaPage: React.FC = () => {
   const description = 'Sanfte Hatha Yoga-Lektionen mit Isabel Akanji';
 
   return (
-    <div className={'YogaPage page'}>
+    <div className={'YogaPage'}>
       <Helmet>
         <title>{title}</title>
         <meta name='description' content={description}/>
