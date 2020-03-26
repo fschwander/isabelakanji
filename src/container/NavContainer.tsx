@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './NavContainer.scss';
+import {YogaPage} from "../pages/yoga/YogaPage";
 
 export const NavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -9,10 +10,13 @@ export const NavContainer: React.FC = () => {
     <div className={`NavContainer`}>
       {navItems.map((item, i) => {
           return (
-            <div className={`nav-item button ${i === activeIndex ? 'active' : 'not-active'}`}
+            <div className={`register-nav-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
                  onClick={() => setActiveIndex(i)}
                  key={item + i}>
-              <p>{item}</p>
+
+                <div className={'register-label button'} >{item}</div>
+                <YogaPage/>
+
             </div>
           )
         }

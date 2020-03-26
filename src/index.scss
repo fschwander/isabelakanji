@@ -1,8 +1,59 @@
-body {
-  margin: 0;
+@import 'variables';
 
-  .button {
-    cursor: grab;
-    user-select: none;
+html {
+  scroll-behavior: smooth;
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    h1, h2, h3 {
+      font-family: 'Josefin Sans', Avenir, sans-serif !important;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 6vmax;
+      margin: 2em 0 1em;
+    }
+
+    h2 {
+      padding: 3em 0 1.5em;
+    }
+
+    h3 {
+      margin: 1em 0 0.5em;
+      font-size: 1.2em;
+    }
+
+    p {
+      margin: 0 auto 0.8em;
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.9em;
+    }
+
+    a {
+      color: $clr_black;
+      padding-bottom: 0.1em;
+      border-bottom: 0.2em solid white;
+      text-decoration: none;
+
+      &:hover {
+        color: $clr_red_dark;
+        text-decoration: none;
+      }
+    }
+
+    .button {
+      cursor: grab;
+      user-select: none;
+    }
+
+    .horizontal-container {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }
+

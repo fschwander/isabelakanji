@@ -2,17 +2,29 @@ $animDuration: .8s;
 
 .NavContainer {
   display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
-  .nav-item {
+  .page {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .register-nav-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 5vw;
+    width: 4vw;
     height: 100vh;
     transition: width $animDuration ease-in-out, filter $animDuration * 1.5 ease-in-out;
-    background-color: deepskyblue;
+    background-color: deepskyblue; // todo: remove
 
-    p {
+    .register-label {
+      z-index: 1000;
+      margin: 1rem;
       border-left: 2px solid transparent;
       text-align: center;
       transform: rotate(180deg);
@@ -22,17 +34,11 @@ $animDuration: .8s;
     &.active {
       width: 100%;
       cursor: unset;
-
-      p {
-        opacity: 0;
-      }
     }
 
     &.not-active {
-      filter: brightness(70%);
-
       &:hover {
-        p {
+        .register-label {
           border-left: 2px solid black;
         }
       }

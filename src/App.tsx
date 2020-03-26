@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import {NavContainer} from "./components/NavContainer";
+import {NavContainer} from "./container/NavContainer";
 
 function App() {
   return (
