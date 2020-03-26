@@ -41,8 +41,8 @@ export const YogaPage: React.FC = () => {
   }
 
   useEffect(() => {
-    setBackgroundGradient(scaleColorOnScroll)
-  }, [scrollTop])
+    scaleColorOnScroll()
+  })
 
   return (
     <div className={'YogaPage'} ref={rootRef}

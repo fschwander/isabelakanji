@@ -22,7 +22,7 @@ $animDuration: .8s;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 4vw;
+    width: 3rem;
     height: 100vh;
     transition: width $animDuration ease-in-out, filter $animDuration * 1.5 ease-in-out;
 

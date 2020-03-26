@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderInterface> = props => {
 
   useEffect(() => {
       handleScroll()
-    }, [props.scrollTop]
+    }
   )
 
   return (
