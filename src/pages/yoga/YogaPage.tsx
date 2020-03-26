@@ -1,11 +1,11 @@
 import './YogaPage.scss';
 import React, {createRef, RefObject, useEffect, useState} from "react";
-import Footer from "./components/Footer";
-import Content from "./components/Content";
 import ogImage from '../../res/imgs/ogImage.jpg';
 import {Helmet} from 'react-helmet';
 import {Header} from "./components/Header";
 import * as d3 from "d3-scale";
+import {Footer} from './components/Footer';
+import {Content} from './components/Content';
 
 export const YogaPage: React.FC = () => {
   const [scrollTop, setScrollTop] = useState(0);
@@ -22,22 +22,22 @@ export const YogaPage: React.FC = () => {
   }
 
   const scaleColorOnScroll = () => {
-      const lightBlue = '#93BED5';
-      const darkBlue = '#4791B8';
-      const lightGreen = '#9CC7C8';
-      const darkGreen = '#5BA2A4';
+    const lightBlue = '#93BED5';
+    const darkBlue = '#4791B8';
+    const lightGreen = '#9CC7C8';
+    const darkGreen = '#5BA2A4';
 
-      const maxY = 300;
+    const maxY = 300;
 
-      // @ts-ignore
-      const topColorScale = d3.scaleLinear().domain([0, maxY]).range([darkGreen, darkBlue]);
-      // @ts-ignore
-      const bottomColorScale = d3.scaleLinear().domain([0, maxY]).range([lightBlue, lightGreen]);
+    // @ts-ignore
+    const topColorScale = d3.scaleLinear().domain([0, maxY]).range([darkGreen, darkBlue]);
+    // @ts-ignore
+    const bottomColorScale = d3.scaleLinear().domain([0, maxY]).range([lightBlue, lightGreen]);
 
-      let topColor = (value: number) => value <= maxY ? topColorScale(value) : topColorScale(maxY);
-      let bottomColor = (value: number) => value <= maxY ? bottomColorScale(value) : bottomColorScale(maxY);
+    let topColor = (value: number) => value <= maxY ? topColorScale(value) : topColorScale(maxY);
+    let bottomColor = (value: number) => value <= maxY ? bottomColorScale(value) : bottomColorScale(maxY);
 
-      setBackgroundGradient(`linear-gradient(to bottom, ${topColor(scrollTop)} 10%, ${bottomColor(scrollTop / 4)} 90%)`)
+    setBackgroundGradient(`linear-gradient(to bottom, ${topColor(scrollTop)} 10%, ${bottomColor(scrollTop / 4)} 90%)`)
   }
 
   useEffect(() => {

@@ -1,8 +1,8 @@
-import React from 'react';
-import {Col, Container, Row} from "reactstrap";
 import './Content.scss';
+import React from "react";
+import {Container, Row, Col} from "reactstrap";
 
-export default function Content() {
+export const Content: React.FC = () => {
 
   return (
     <Container id='Content' className='Content'>
