@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@types/d3-scale": "^2.2.0",
     "@types/react-helmet": "^5.0.15"
   }
 }
