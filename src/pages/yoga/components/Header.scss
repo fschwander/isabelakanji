@@ -21,15 +21,6 @@
     }
   }
 
-  .topBackgroundElement {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1000;
-  }
-
   .logoContainer {
     transform-origin: bottom center;
     border-radius: 50%;
@@ -39,7 +30,7 @@
   }
 
   .logoContainer, #logo-shape {
-    transition: 50ms linear;
+    transition: 200ms linear;
   }
 
   @media screen and (min-aspect-ratio: 3/2) {
