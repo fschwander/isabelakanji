@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
 
 
   return (
-    <div id='Footer' className='Footer'>
+    <div className='Footer'>
 
       <div className='bubble-container'>
 

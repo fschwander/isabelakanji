@@ -18,7 +18,7 @@ function Introduction() {
   let locationLink = <a target='_blank' rel='noopener noreferrer' href={googleStudioLocation}>Grüntalstrasse&nbsp;24</a>
 
   return (
-    <div id='Introduction' className='Introduction'>
+    <div className='Introduction'>
       <h2>Sanfte Hatha Yoga-Lektionen mit Isabel Akanji</h2>
       <p>Die Lektionen orientieren sich am klassischen Hatha Yoga-Stil mit Körperübungen (asanas), Atemtechniken
         (pranayamas), Entspannung (savasana) und Meditation. Ziel ist unsere Energien aufzubauen und mit

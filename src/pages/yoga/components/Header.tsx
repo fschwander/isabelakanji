@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderInterface> = props => {
   )
 
   return (
-    <div id='Header' className='Header' ref={rootElement}>
+    <div className='Header' ref={rootElement}>
       <div className='logo-container' ref={logoContainerElement}>
         <LogoSvg className={'logo-svg'}/>
       </div>
