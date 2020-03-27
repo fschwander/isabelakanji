@@ -50,13 +50,13 @@ export const Header: React.FC<HeaderInterface> = props => {
 
   return (
     <div id='Header' className='Header' ref={rootElement}>
-      <div className='logoContainer' ref={logoContainerElement}>
+      <div className='logo-container' ref={logoContainerElement}>
         <Logo/>
       </div>
 
-      <div className='headerContainer'>
-        <div className='specialHeader'>Yoga</div>
-        <h1 className='specialSubheader'>Isabel Akanji</h1>
+      <div className='header-container'>
+        <div className='special-header'>Yoga</div>
+        <h1 className='special-subheader'>Isabel Akanji</h1>
       </div>
     </div>
   )

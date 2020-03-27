@@ -5,23 +5,23 @@
   padding-top: 4em;
   width: 100%;
 
-  .headerContainer {
+  .header-container {
     margin-top: 2em;
     z-index: 1000;
 
-    .specialHeader {
+    .special-header {
       text-transform: uppercase;
       font-size: 13vmax;
     }
 
-    .specialSubheader {
+    .special-subheader {
       font-size: 5vmax;
       transform: translateY(-0.4em);
       margin-top: unset;
     }
   }
 
-  .logoContainer {
+  .logo-container {
     transform-origin: bottom center;
     border-radius: 50%;
     box-shadow: 0 0 0 10px white;
@@ -29,14 +29,14 @@
     max-width: 50vw;
   }
 
-  .logoContainer, #logo-shape {
+  .logo-container, #logo-shape {
     transition: 300ms linear;
   }
 
   @media screen and (min-aspect-ratio: 3/2) {
     padding-top: 1em;
 
-    .headerContainer {
+    .header-container {
       margin-top: 0;
     }
   }

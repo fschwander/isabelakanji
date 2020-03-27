@@ -44,7 +44,7 @@ export const YogaPage: React.FC = () => {
          style={{backgroundImage: backgroundGradient}}>
 
       <Header scrollTop={scrollTop}/>
-      <div className='contentContainer'>
+      <div className='content-container'>
         <Content/>
       </div>
       <Footer/>

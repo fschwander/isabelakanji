@@ -13,20 +13,20 @@ export const Footer: React.FC = () => {
   return (
     <div id='Footer' className='Footer'>
 
-      <div className='bubbleContainer'>
+      <div className='bubble-container'>
 
-        <div className='personBubble bubble'>
+        <div className='person-bubble bubble'>
           <h3>Isabel Akanji</h3>
           <span>077 445 23 47</span>
           <span>{emailLink}</span>
         </div>
 
-        <div className='studioContainer'>
-          <div className='studioBubble bubble'>
+        <div className='studio-container'>
+          <div className='studio-bubble bubble'>
             <span>im Studio</span>
             <span>{studioLink}</span>
           </div>
-          <div className='addressBubble bubble'>
+          <div className='address-bubble bubble'>
             <span>{locationLink}</span>
             <span>8405 Winterthur</span>
           </div>

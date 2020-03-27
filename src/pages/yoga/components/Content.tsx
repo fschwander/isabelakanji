@@ -29,7 +29,7 @@ function Introduction() {
       <p>Nach jeder Lektion verspüren wir den Yoga-Effekt und verlassen den Raum entspannt und voller Kraft für den
         Tag.</p>
 
-      <Row className='rendezvousContainer'>
+      <Row className='rendezvous-container'>
         <Col sm={1} md={2}/>
         <Col sm={3} md={2}>
           <h3 className='bubble'>Wo?</h3>
@@ -50,7 +50,7 @@ function Events() {
 
       <Row>
         <Col md={4}>
-          <div className='semesterContainer bubble'>
+          <div className='semester-container bubble'>
             <p>Anlassdaten</p>
             <h3>Spätsommerblock</h3>
             <p>19. August – 30. September 2019</p>
@@ -73,7 +73,7 @@ function Events() {
           <h3>Privatstunden</h3>
           <div>Termine nach Absprache.</div>
 
-          <div className='pricesContainer bubble'>
+          <div className='prices-container bubble'>
             <h3>Preise</h3>
             <div>Einzeleintritt 32.–</div>
             <div>ganzer Spätsommerblock 182.–</div>
