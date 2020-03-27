@@ -1,7 +1,5 @@
 import './YogaPage.scss';
 import React, {createRef, RefObject, useEffect, useState} from "react";
-import ogImage from '../../res/imgs/ogImage.jpg';
-import {Helmet} from 'react-helmet';
 import {Header} from "./components/Header";
 import * as d3 from "d3-scale";
 import {Footer} from './components/Footer';
@@ -11,10 +9,6 @@ export const YogaPage: React.FC = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const rootRef: RefObject<HTMLDivElement> = createRef();
   const [backgroundGradient, setBackgroundGradient] = useState()
-
-  const url = 'http://www.isabelakanji.ch';
-  const title = 'Isabel Akanji | Yoga';
-  const description = 'Sanfte Hatha Yoga-Lektionen mit Isabel Akanji';
 
   const handleScroll = (e: any) => {
     setScrollTop(e.target.scrollTop);
@@ -48,15 +42,6 @@ export const YogaPage: React.FC = () => {
     <div className={'YogaPage'} ref={rootRef}
          onScroll={handleScroll}
          style={{backgroundImage: backgroundGradient}}>
-      <Helmet>
-        <title>{title}</title>
-        <meta name='description' content={description}/>
-        <meta property="og:url" content={url}/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content={title}/>
-        <meta property="og:description" content={description}/>
-        <meta property="og:image" content={ogImage}/>
-      </Helmet>
 
       <Header scrollTop={scrollTop}/>
       <div className='contentContainer'>
