@@ -1,7 +1,7 @@
 import React, {RefObject, useEffect} from "react";
-import Logo from "../../../res/Logo";
 import './Header.scss';
 import * as d3 from "d3-scale";
+import {ReactComponent as LogoSvg} from "../../../res/imgs/logo.svg";
 
 interface HeaderInterface {
   scrollTop: number
@@ -25,12 +25,12 @@ export const Header: React.FC<HeaderInterface> = props => {
       const sizeScale = d3.scaleLinear().domain([0, 200]).range([1, 1.4]);
       logoContainerElement.current.style.transform = `scale(${sizeScale(scrollTop)}) translateY(${yPos}px)`;
 
-      const sizeLogoScale = d3.scaleLinear().domain([0, 200]).range([1, 1.2]);
-      const logo = document.getElementById("logo-shape");
-      if (logo) {
-        logo.style.transform = `scale(${sizeLogoScale(scrollTop)})`;
-        logo.style.transformOrigin = `center`;
-      }
+      const darkBlue = '#4791B8';
+      const darkGreen = '#5BA2A4';
+      // @ts-ignore
+      const topColorScale = d3.scaleLinear().domain([0, maxY]).range([darkGreen, darkBlue]);
+      const logo: HTMLObjectElement = rootElement.current.getElementsByClassName("logo-svg")[0] as HTMLObjectElement;
+      logo.style.borderColor = topColorScale(scrollTop);
     }
   }
 
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderInterface> = props => {
   return (
     <div id='Header' className='Header' ref={rootElement}>
       <div className='logo-container' ref={logoContainerElement}>
-        <Logo/>
+        <LogoSvg className={'logo-svg'}/>
       </div>
 
       <div className='header-container'>

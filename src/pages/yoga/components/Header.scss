@@ -1,13 +1,38 @@
+@import "../../../variables";
 .Header {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 4em;
   width: 100%;
+  min-height: 100vh;
+
+  @media screen and (max-aspect-ratio: 3/4) {
+    height: calc(100vh - 72px);
+  }
+
+  .logo-container {
+    transform-origin: bottom center;
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+    box-shadow: 0 0 0 10px white;
+    transition: 100ms ease-out;
+    margin-top: 15vh;
+
+    @media screen and (max-aspect-ratio: 3/4) {
+      margin-top: unset;
+    }
+
+    .logo-svg {
+      background-color: white;
+      border: 2px solid $clr_blue_dark;
+      border-radius: 50%;
+    }
+  }
 
   .header-container {
-    margin-top: 2em;
-    z-index: 1000;
+    padding-top: 1rem;
 
     .special-header {
       text-transform: uppercase;
@@ -16,21 +41,9 @@
 
     .special-subheader {
       font-size: 5vmax;
-      transform: translateY(-0.4em);
+      transform: translateY(-0.2em);
       margin-top: unset;
     }
-  }
-
-  .logo-container {
-    transform-origin: bottom center;
-    border-radius: 50%;
-    box-shadow: 0 0 0 10px white;
-    width: 300px;
-    max-width: 50vw;
-  }
-
-  .logo-container, #logo-shape {
-    transition: 300ms linear;
   }
 
   @media screen and (min-aspect-ratio: 3/2) {
