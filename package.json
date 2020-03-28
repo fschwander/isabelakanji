@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "d3-scale": "^3.2.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
@@ -13,16 +14,16 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
-    "@types/d3-scale": "^2.2.0",
-    "@types/react-helmet": "^5.0.15",
-    "@types/reactstrap": "^8.4.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/d3-scale": "^2.2.0",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0"
+    "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^5.0.15",
+    "@types/reactstrap": "^8.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

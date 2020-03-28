@@ -29,6 +29,7 @@ html {
     h4 {
       text-transform: uppercase;
       letter-spacing: 1rem;
+      padding-top: 1rem;
       margin: unset;
     }
 
@@ -59,6 +60,26 @@ html {
     .horizontal-container {
       display: flex;
       flex-direction: row;
+    }
+
+    .vertical-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .Content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+
+      .padding-top {
+        padding-top: 1.5em;
+      }
+
+      & > * {
+        padding-bottom: 20vh;
+      }
     }
   }
 }

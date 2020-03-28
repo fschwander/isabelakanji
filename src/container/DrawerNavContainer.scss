@@ -34,6 +34,11 @@ $animDuration: .8s;
       text-align: center;
       transform: rotate(180deg);
       writing-mode: vertical-rl;
+
+      h4 {
+        margin-right: 4px;
+        border-left: 2px solid transparent;
+      }
     }
 
     &.active {
@@ -44,10 +49,8 @@ $animDuration: .8s;
     &.not-active {
       width: 3rem;
 
-      &:hover {
-        .register-label {
+      .link:hover {
           border-left: 2px solid black;
-        }
       }
     }
   }

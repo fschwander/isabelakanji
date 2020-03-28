@@ -46,7 +46,7 @@ export const DrawerNavContainer: React.FC = () => {
                  key={item.text + i}>
 
               <div className={'drawer-label'} style={{minWidth: `${registerWidth}px`}}>
-                <h4>{item.text}</h4>
+                <h4 className={'link'}>{item.text}</h4>
               </div>
               <div className={'drawer-page-container'}>
                 {item.component}

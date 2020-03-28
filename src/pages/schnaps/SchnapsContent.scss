@@ -1,0 +1,48 @@
+@import "../../variables";
+
+.SchnapsContent {
+
+  img {
+    width: 100%;
+  }
+
+  .header {
+    margin: auto;
+    max-width: 900px;
+
+    .header-img-container {
+      position: relative;
+      overflow: hidden;
+
+      .front {
+        top: 0;
+        left: 0;
+        position: absolute;
+      }
+    }
+
+    .header-text-container {
+      width: 80%;
+      margin: auto;
+      transform: translateY(-4rem);
+      padding: 1rem 3rem;
+      background-color: $clr_yellow_light;
+
+      h1, h2 {
+        margin: unset;
+        padding: unset;
+      }
+
+    }
+  }
+
+  .Content {
+    .bubble {
+      border-radius: 50%;
+    }
+  }
+
+  .Footer {
+
+  }
+}

@@ -5,7 +5,7 @@ import {Container, Row, Col} from "reactstrap";
 export const Content: React.FC = () => {
 
   return (
-    <Container id='Content' className='Content'>
+    <Container className='Content'>
       <Introduction/>
       <Events/>
       <SignUp/>
@@ -45,7 +45,7 @@ function Introduction() {
 
 function Events() {
   return (
-    <div id='Events' className='Events'>
+    <div className='Events'>
       <h2>Angebot & Preise</h2>
 
       <Row>

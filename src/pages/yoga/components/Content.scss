@@ -1,15 +1,4 @@
 .Content {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-
-  & > * {
-    padding-bottom: 20vh;
-  }
-
-  .padding-top {
-    padding-top: 1.5em;
-  }
 
   .rendezvous-container {
     display: flex;
