@@ -14,14 +14,14 @@ export const DrawerNavContainer: React.FC = () => {
   const [registerWidth, setRegisterWidth] = useState(0)
   const navItems: Array<NavItem> = [
     {
-      text: 'Yoga',
-      color: '#93BED5',
-      component: <YogaPage/>
-    },
-    {
       text: 'Schnaps',
       color: '#DDE2B5',
       component: <SchnapsPage/>
+    },
+    {
+      text: 'Yoga',
+      color: '#93BED5',
+      component: <YogaPage/>
     }
   ];
 

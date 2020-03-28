@@ -30,7 +30,7 @@
       }
 
       .studio-bubble {
-        transform: translate(7em, 4em) rotate(14deg);
+        transform: translate(5em, 2em) rotate(14deg);
         width: 8em;
         height: 8em;
       }
@@ -43,11 +43,15 @@
       flex-direction: row;
 
       .person-bubble {
-        transform: translateX(0) rotate(-10deg);
+        transform: translateX(3em) rotate(-10deg);
       }
 
       .studio-container {
         transform: translate(-4em, 3em);
+      }
+
+      .studio-bubble {
+        transform: translate(7em, 4em) rotate(14deg);
       }
     }
   }
