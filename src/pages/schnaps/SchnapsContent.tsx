@@ -5,15 +5,20 @@ import bottleIva from '../../res/imgs/bottle_iva.jpg';
 import bottleArven from '../../res/imgs/bottle_arven.jpg';
 import {Col, Container, Row} from "reactstrap";
 import headerImgFront from '../../res/imgs/bottles_front.png'
-import headerImgBack from '../../res/imgs/bottles_back.png'
+import headerImgBack from '../../res/imgs/bottles_back.png';
 
-export const SchnapsContent: React.FC = () => {
+interface SchnapsContentProps {
+  scrollTop: number
+}
+
+export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
 
   const Header = () => {
     return (<div className='header'>
-        <div className={'header-img-container'}>
+        <div className={'header-img-container'} style={{transform: `translateY(${props.scrollTop / 2}px)`}}>
           <img className={'back'} src={headerImgBack} alt={'Hintergrundbild'}/>
-          <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}/>
+          <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}
+               style={{transform: `scale(${props.scrollTop / 3000 + 1})`}}/>
         </div>
 
         <div className={'header-text-container'}>
@@ -22,7 +27,7 @@ export const SchnapsContent: React.FC = () => {
         </div>
       </div>
     )
-  }
+  };
 
   const Content = () => {
     return (
@@ -55,15 +60,15 @@ export const SchnapsContent: React.FC = () => {
         </Row>
       </Container>
     )
-  }
+  };
 
   const Footer = () => {
-    return(
+    return (
       <div className={'footer'}>
         <img src={mountainImg} alt={'Hintergrundbild'}/>
       </div>
     )
-  }
+  };
 
   return (
     <div className='SchnapsContent'>
@@ -72,4 +77,4 @@ export const SchnapsContent: React.FC = () => {
       <Footer/>
     </div>
   )
-}
+};
