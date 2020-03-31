@@ -15,6 +15,7 @@
       overflow: hidden;
 
       .front {
+        transition: transform .3s ease-out;
         top: 0;
         left: 0;
         position: absolute;

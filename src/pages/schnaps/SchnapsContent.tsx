@@ -1,5 +1,5 @@
 import './SchnapsContent.scss'
-import React from "react";
+import React, {createRef, RefObject} from "react";
 import mountainImg from '../../res/imgs/mountains.svg';
 import bottleIva from '../../res/imgs/bottle_iva.jpg';
 import bottleArven from '../../res/imgs/bottle_arven.jpg';
@@ -12,25 +12,23 @@ interface SchnapsContentProps {
 }
 
 export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
+  const headerTextRef: RefObject<HTMLDivElement> = createRef();
 
-  const Header = () => {
-    return (<div className='header'>
-        <div className={'header-img-container'} style={{transform: `translateY(${props.scrollTop / 2}px)`}}>
+  return (
+    <div className='SchnapsContent'>
+      <div className='header'>
+        <div className={'header-img-container'}>
           <img className={'back'} src={headerImgBack} alt={'Hintergrundbild'}/>
           <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}
                style={{transform: `scale(${props.scrollTop / 3000 + 1})`}}/>
         </div>
 
-        <div className={'header-text-container'}>
+        <div className={'header-text-container'} ref={headerTextRef}>
           <h1>Schnaps aus Savognin</h1>
           <h2>selbstgemacht & lecker</h2>
         </div>
       </div>
-    )
-  };
 
-  const Content = () => {
-    return (
       <Container className={'Content'}>
         <Row>
           <Col sm={0} md={1}/>
@@ -59,22 +57,11 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           <Col sm={0} md={1}/>
         </Row>
       </Container>
-    )
-  };
 
-  const Footer = () => {
-    return (
       <div className={'footer'}>
         <img src={mountainImg} alt={'Hintergrundbild'}/>
       </div>
-    )
-  };
 
-  return (
-    <div className='SchnapsContent'>
-      <Header/>
-      <Content/>
-      <Footer/>
     </div>
   )
 };
