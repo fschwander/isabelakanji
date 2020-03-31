@@ -34,13 +34,17 @@
         margin: unset;
         padding: unset;
       }
-
     }
   }
 
   .Content {
     .bubble {
       border-radius: 50%;
+    }
+
+    h2, h3, p {
+      margin: unset;
+      padding: unset;
     }
   }
 

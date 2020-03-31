@@ -38,7 +38,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           <Col sm={12} md={5} className={'vertical-container'}>
             <h2>Iva</h2>
             <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
-            <p>21%, 4dl</p>
+            <p>21%, 3.75dl</p>
             <p>39.–</p>
           </Col>
           <Col sm={0} md={1}/>
@@ -48,7 +48,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           <Col sm={12} md={5} className={'vertical-container'}>
             <h2>Arvenschnaps</h2>
             <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
-            <p>21%, 4dl</p>
+            <p>21%, 3.75dl</p>
             <p>39.–</p>
           </Col>
           <Col sm={12} md={5}>
