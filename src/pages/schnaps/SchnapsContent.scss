@@ -46,6 +46,18 @@
       margin: unset;
       padding: unset;
     }
+
+    .orientation-left {
+      h2, h3, p {
+        text-align: left;
+      }
+    }
+
+    .orientation-right {
+      h2, h3, p {
+        text-align: right;
+      }
+    }
   }
 
   .Footer {

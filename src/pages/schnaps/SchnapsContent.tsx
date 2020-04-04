@@ -35,7 +35,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           <Col sm={12} md={5}>
             <img className={'bubble'} src={bottleIva} alt={'Schnapsbild'}/>
           </Col>
-          <Col sm={12} md={5} className={'vertical-container'}>
+          <Col sm={12} md={5} className={'vertical-container orientation-left'}>
             <h2>Iva</h2>
             <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
             <p>21%, 3.75dl</p>
@@ -45,7 +45,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         </Row>
         <Row>
           <Col sm={0} md={1}/>
-          <Col sm={12} md={5} className={'vertical-container'}>
+          <Col sm={12} md={5} className={'vertical-container orientation-right'}>
             <h2>Arvenschnaps</h2>
             <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
             <p>21%, 3.75dl</p>
