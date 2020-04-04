@@ -8,15 +8,9 @@ $animDuration: .8s;
   height: 100vh;
 
   .drawer-page-container {
-    overflow: hidden;
-    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: 100%;
-
-    & > * {
-      overflow-y: scroll;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .drawer-item {

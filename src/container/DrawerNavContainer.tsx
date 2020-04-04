@@ -36,11 +36,12 @@ export const DrawerNavContainer: React.FC = () => {
   return (
     <div className={`DrawerNavContainer`}>
       {navItems.map((item, i) => {
+
           return (
             <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active button'}`}
                  style={{
                    backgroundColor: item.color,
-                   width: i === activeIndex ? `calc(100% - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`
+                   width: i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`
                  }}
                  onClick={() => setActiveIndex(i)}
                  key={item.text + i}>
@@ -49,7 +50,10 @@ export const DrawerNavContainer: React.FC = () => {
                 <h4 className={'link'}>{item.text}</h4>
               </div>
               <div className={'drawer-page-container'}>
-                {item.component}
+                <div className={'inner-drawer-container'}
+                     style={{width: `calc(100vw - ${navItems.length * registerWidth}px)`}}>
+                  {item.component}
+                </div>
               </div>
             </div>
           )
