@@ -12,8 +12,14 @@ $animDuration: .8s;
     height: 100%;
 
     .inner-drawer-container {
-      overflow: scroll;
-      height: 100vh;
+      height: 100%;
+      width: 100%;
+
+      & > * {
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
