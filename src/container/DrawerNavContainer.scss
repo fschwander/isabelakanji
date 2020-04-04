@@ -8,9 +8,13 @@ $animDuration: .8s;
   height: 100vh;
 
   .drawer-page-container {
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
     height: 100%;
+
+    .inner-drawer-container {
+      overflow: scroll;
+      height: 100vh;
+    }
   }
 
   .drawer-item {
@@ -42,10 +46,10 @@ $animDuration: .8s;
 
     &.not-active {
       width: 3rem;
+    }
 
-      .link:hover {
-          border-left: 2px solid black;
-      }
+    .link:hover {
+      border-left: 2px solid black;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {ReactElement, useEffect, useRef, useState} from "react";
 import './DrawerNavContainer.scss';
 import {YogaPage} from "../pages/yoga/YogaPage";
 import {SchnapsPage} from "../pages/schnaps/SchnapsPage";
@@ -11,6 +11,7 @@ interface NavItem {
 
 export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const prevActiveIndex = useRef(0);
   const [registerWidth, setRegisterWidth] = useState(0)
   const navItems: Array<NavItem> = [
     {
@@ -33,22 +34,30 @@ export const DrawerNavContainer: React.FC = () => {
     updateSize()
   });
 
+  const setActiveDrawer = (i: number) => {
+    const prevIndex = activeIndex;
+    const newIndex = i === activeIndex ? prevActiveIndex.current : i;
+    setActiveIndex(newIndex)
+    prevActiveIndex.current = prevIndex;
+  };
+
   return (
     <div className={`DrawerNavContainer`}>
       {navItems.map((item, i) => {
-
           return (
-            <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active button'}`}
+            <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
+                 key={item.text + i}
                  style={{
                    backgroundColor: item.color,
                    width: i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`
-                 }}
-                 onClick={() => setActiveIndex(i)}
-                 key={item.text + i}>
+                 }}>
 
-              <div className={'drawer-label'} style={{minWidth: `${registerWidth}px`}}>
+              <div className={'drawer-label button'}
+                   style={{minWidth: `${registerWidth}px`}}
+                   onClick={() => setActiveDrawer(i)}>
                 <h4 className={'link'}>{item.text}</h4>
               </div>
+
               <div className={'drawer-page-container'}>
                 <div className={'inner-drawer-container'}
                      style={{width: `calc(100vw - ${navItems.length * registerWidth}px)`}}>
