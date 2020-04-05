@@ -40,6 +40,8 @@ $animDuration: .8s;
       text-align: center;
       transform: rotate(180deg);
       writing-mode: vertical-rl;
+      transition: min-width $animDuration ease-in-out,
+      min-height $animDuration ease-in-out;
 
       h4 {
         margin-right: 4px;

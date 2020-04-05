@@ -44,7 +44,7 @@ export const DrawerNavContainer: React.FC = () => {
     prevActiveIndex.current = prevIndex;
   };
 
-  const calcHorizontalSpace = (isSmallScreen: boolean, i: number): string => {
+  const calcHorizontalSpace = (i: number): string => {
     if (isSmallScreen) {
       return '100vw';
     } else if (activeIndex === -1) {
@@ -54,13 +54,33 @@ export const DrawerNavContainer: React.FC = () => {
     }
   };
 
-  const calcVerticalSpace = (isSmallScreen: boolean, i: number): string => {
+  const calcVerticalSpace = (i: number): string => {
     if (!isSmallScreen) {
       return '100vh';
     } else if (activeIndex === -1) {
       return `${100 / navItems.length}vh`;
     } else {
       return i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+    }
+  };
+
+  const calcDrawerLabelWidth = (): string => {
+    if (isSmallScreen) {
+      return '';
+    } else if (activeIndex === -1) {
+      return `${100 / navItems.length}vw`;
+    } else {
+      return `${registerWidth}px`
+    }
+  };
+
+  const calcDrawerLabelHeight = (): string => {
+    if (!isSmallScreen) {
+      return '';
+    } else if (activeIndex === -1) {
+      return `${100 / navItems.length}vh`;
+    } else {
+      return `${registerHeight}px`;
     }
   };
 
@@ -72,14 +92,14 @@ export const DrawerNavContainer: React.FC = () => {
                  key={item.text + i}
                  style={{
                    backgroundColor: item.color,
-                   width: calcHorizontalSpace(isSmallScreen, i),
-                   height: calcVerticalSpace(isSmallScreen, i)
+                   width: calcHorizontalSpace(i),
+                   height: calcVerticalSpace(i)
                  }}>
 
               <div className={'drawer-label button'}
                    style={{
-                     minWidth: !isSmallScreen ? `${registerWidth}px` : '',
-                     minHeight: isSmallScreen ? `${registerHeight}px` : ''
+                     minWidth: calcDrawerLabelWidth(),
+                     minHeight: calcDrawerLabelHeight()
                    }}
                    onClick={() => setActiveDrawer(i)}>
                 <h4 className={'link'}>{item.text}</h4>
