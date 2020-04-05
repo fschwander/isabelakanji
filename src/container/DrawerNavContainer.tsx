@@ -54,11 +54,11 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcVerticalSpace = (i: number): string => {
     if (!isSmallScreen) {
-      return '100vh';
+      return `${window.innerHeight}px`;
     } else if (activeIndex === -1) {
-      return `${100 / navItems.length}vh`;
+      return `${window.innerHeight / navItems.length}px`;
     } else {
-      return i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+      return i === activeIndex ? `calc(${window.innerHeight - (navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
     }
   };
 
@@ -74,16 +74,16 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcDrawerLabelHeight = (): string => {
     if (!isSmallScreen) {
-      return '100vh';
+      return `${window.innerHeight}px`;
     } else if (activeIndex === -1) {
-      return `${100 / navItems.length}vh`;
+      return `${window.innerHeight / navItems.length}px`;
     } else {
       return `${registerHeight}px`;
     }
   };
 
   return (
-    <div className={`DrawerNavContainer`}>
+    <div className={`DrawerNavContainer`} style={{height: `${window.innerHeight}px`}}>
       {navItems.map((item, i) => {
           return (
             <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
