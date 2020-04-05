@@ -11,6 +11,7 @@ interface NavItem {
 
 export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const prevActiveIndex = useRef(0);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
@@ -30,14 +31,11 @@ export const DrawerNavContainer: React.FC = () => {
   useEffect(() => {
     const updateSize = () => {
       setRegisterWidth(window.innerWidth * 0.04 < 30 ? 30 : window.innerWidth * 0.04);
+      setIsSmallScreen(window.innerWidth <= 600);
     };
     window.addEventListener('resize', () => updateSize());
     updateSize()
   });
-
-  const isSmallScreen = ():boolean => {
-    return window.innerWidth <= 600;
-  }
 
   const setActiveDrawer = (i: number) => {
     const prevIndex = activeIndex;
@@ -54,20 +52,22 @@ export const DrawerNavContainer: React.FC = () => {
                  key={item.text + i}
                  style={{
                    backgroundColor: item.color,
-                   width: isSmallScreen() ? '100vw' : i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`,
-                   height: !isSmallScreen() ? '100vh' : i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+                   width: isSmallScreen ? '100vw' : i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`,
+                   height: !isSmallScreen ? '100vh' : i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
                  }}>
 
               <div className={'drawer-label button'}
-                   style={{minWidth: !isSmallScreen() ? `${registerWidth}px` : '',
-                   minHeight: isSmallScreen() ? `${registerHeight}px`: ''}}
+                   style={{
+                     minWidth: !isSmallScreen ? `${registerWidth}px` : '',
+                     minHeight: isSmallScreen ? `${registerHeight}px` : ''
+                   }}
                    onClick={() => setActiveDrawer(i)}>
                 <h4 className={'link'}>{item.text}</h4>
               </div>
 
               <div className={'drawer-page-container'}>
                 <div className={'inner-drawer-container'}
-                     style={{width: !isSmallScreen() ? `calc(100vw - ${navItems.length * registerWidth}px)`: ''}}>
+                     style={{width: !isSmallScreen ? `calc(100vw - ${navItems.length * registerWidth}px)` : ''}}>
                   {item.component}
                 </div>
               </div>
