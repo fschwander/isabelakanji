@@ -10,9 +10,9 @@ interface NavItem {
 }
 
 export const DrawerNavContainer: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const prevActiveIndex = useRef(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
   const navItems: Array<NavItem> = [
@@ -44,6 +44,26 @@ export const DrawerNavContainer: React.FC = () => {
     prevActiveIndex.current = prevIndex;
   };
 
+  const calcHorizontalSpace = (isSmallScreen: boolean, i: number): string => {
+    if (isSmallScreen) {
+      return '100vw';
+    } else if (activeIndex === -1) {
+      return `${100 / navItems.length}vw`;
+    } else {
+      return i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`;
+    }
+  };
+
+  const calcVerticalSpace = (isSmallScreen: boolean, i: number): string => {
+    if (!isSmallScreen) {
+      return '100vh';
+    } else if (activeIndex === -1) {
+      return `${100 / navItems.length}vh`;
+    } else {
+      return i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+    }
+  };
+
   return (
     <div className={`DrawerNavContainer`}>
       {navItems.map((item, i) => {
@@ -52,8 +72,8 @@ export const DrawerNavContainer: React.FC = () => {
                  key={item.text + i}
                  style={{
                    backgroundColor: item.color,
-                   width: isSmallScreen ? '100vw' : i === activeIndex ? `calc(100vw - ${(navItems.length - 1) * registerWidth}px)` : `${registerWidth}px`,
-                   height: !isSmallScreen ? '100vh' : i === activeIndex ? `calc(100vh - ${(navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+                   width: calcHorizontalSpace(isSmallScreen, i),
+                   height: calcVerticalSpace(isSmallScreen, i)
                  }}>
 
               <div className={'drawer-label button'}
