@@ -28,7 +28,9 @@ $animDuration: .8s;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    transition: width $animDuration ease-in-out, filter $animDuration * 1.5 ease-in-out;
+    transition: width $animDuration ease-in-out,
+    height $animDuration ease-in-out,
+    filter $animDuration * 1.5 ease-in-out;
 
     .drawer-label {
       display: flex;
@@ -47,15 +49,34 @@ $animDuration: .8s;
 
     &.active {
       width: 100%;
-      cursor: unset;
     }
 
     &.not-active {
       width: 3rem;
     }
+  }
 
-    .link:hover {
-      border-left: 2px solid black;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+
+    .drawer-item {
+      flex-direction: column;
+
+      .drawer-label {
+        transform: unset;
+        writing-mode: unset;
+        min-height: 50px;
+
+        h4 {
+          padding-top: 0.5rem;
+          margin: unset;
+          border: unset;
+        }
+      }
     }
+  }
+
+  .link:hover {
+    border-left: 2px solid black;
   }
 }
