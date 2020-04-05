@@ -1,4 +1,4 @@
-import React, {ReactElement, useEffect, useRef, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import './DrawerNavContainer.scss';
 import {YogaPage} from "../pages/yoga/YogaPage";
 import {SchnapsPage} from "../pages/schnaps/SchnapsPage";
@@ -11,10 +11,10 @@ interface NavItem {
 
 export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const prevActiveIndex = useRef(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
+  const breakPoint = 800;
   const navItems: Array<NavItem> = [
     {
       text: 'Schnaps',
@@ -31,17 +31,15 @@ export const DrawerNavContainer: React.FC = () => {
   useEffect(() => {
     const updateSize = () => {
       setRegisterWidth(window.innerWidth * 0.04 < 30 ? 30 : window.innerWidth * 0.04);
-      setIsSmallScreen(window.innerWidth <= 600);
+      setIsSmallScreen(window.innerWidth <= breakPoint);
     };
     window.addEventListener('resize', () => updateSize());
     updateSize()
   });
 
   const setActiveDrawer = (i: number) => {
-    const prevIndex = activeIndex;
-    const newIndex = i === activeIndex ? prevActiveIndex.current : i;
+    const newIndex = i === activeIndex ? -1 : i;
     setActiveIndex(newIndex)
-    prevActiveIndex.current = prevIndex;
   };
 
   const calcHorizontalSpace = (i: number): string => {
@@ -66,7 +64,7 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcDrawerLabelWidth = (): string => {
     if (isSmallScreen) {
-      return '';
+      return '100vw';
     } else if (activeIndex === -1) {
       return `${100 / navItems.length}vw`;
     } else {
@@ -76,7 +74,7 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcDrawerLabelHeight = (): string => {
     if (!isSmallScreen) {
-      return '';
+      return '100vh';
     } else if (activeIndex === -1) {
       return `${100 / navItems.length}vh`;
     } else {
@@ -117,4 +115,4 @@ export const DrawerNavContainer: React.FC = () => {
       )}
     </div>
   )
-}
+};

@@ -1,4 +1,5 @@
 $animDuration: .8s;
+$breakPoint: 800px;
 
 .DrawerNavContainer {
   display: flex;
@@ -35,6 +36,7 @@ $animDuration: .8s;
     .drawer-label {
       display: flex;
       align-items: center;
+      justify-content: center;
       z-index: 1000;
       border-left: 2px solid transparent;
       text-align: center;
@@ -42,6 +44,13 @@ $animDuration: .8s;
       writing-mode: vertical-rl;
       transition: min-width $animDuration ease-in-out,
       min-height $animDuration ease-in-out;
+
+      @media screen and (min-width: $breakPoint){
+        &:hover .link {
+          cursor: unset;
+          border-left: 2px solid black;
+        }
+      }
 
       h4 {
         margin-right: 4px;
@@ -58,7 +67,7 @@ $animDuration: .8s;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $breakPoint) {
     flex-direction: column;
 
     .drawer-item {
@@ -76,9 +85,5 @@ $animDuration: .8s;
         }
       }
     }
-  }
-
-  .link:hover {
-    border-left: 2px solid black;
   }
 }
