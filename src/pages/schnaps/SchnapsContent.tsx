@@ -54,6 +54,9 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
             <h1>Schnaps aus Savognin</h1>
             <h2>selbstgemacht & lecker</h2>
           </div>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
         </div>
 
         <Container className={'body'}>
@@ -72,6 +75,9 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
               </Row>
             )
           })}
+          <Row>
+            <Col><p>Bestellungen können gerne per <a href='mailto:yoga@isabelakanji.ch'>E-Mail</a> gemacht werden. Danke!</p></Col>
+          </Row>
         </Container>
 
         <div className={'footer'}>
