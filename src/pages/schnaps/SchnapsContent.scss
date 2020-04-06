@@ -39,18 +39,34 @@
 
   .body {
     .item-row {
-      .bubble {
-        border-radius: 50%;
-      }
+      margin: 1rem 0;
 
       h2, h3, p {
         margin: unset;
         padding: unset;
+        width: fit-content;
+      }
+
+      img {
+        max-width: 80vw;
+        display: flex;
+        border-radius: 50%;
+        margin: 1rem auto;
+      }
+
+      h2 {
+        background-color: $clr_yellow_light;
+        width: fit-content;
+        padding: .2rem .4rem;
+      }
+
+      .vertical-container {
+        justify-content: flex-start;
       }
 
       &.un-even {
         h2, h3, p {
-          text-align: left;
+          align-self: flex-end;
         }
       }
 
@@ -58,7 +74,7 @@
         flex-direction: row-reverse;
 
         h2, h3, p {
-          text-align: right;
+          align-self: flex-start;
         }
       }
     }

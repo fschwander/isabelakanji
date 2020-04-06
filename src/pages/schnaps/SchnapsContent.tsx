@@ -62,7 +62,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
               <Row className={`item-row ${i % 2 === 0 ? 'even' : 'un-even'}`} key={item.header + i}>
                 <Col sm={0} md={1}/>
                 <Col sm={12} md={5}>
-                  <img className={'bubble'} src={item.img} alt={`Bild: ${item.header}`}/>
+                  <img src={item.img} alt={`Bild: ${item.header}`}/>
                 </Col>
                 <Col sm={12} md={5} className={'vertical-container'}>
                   <h2>{item.header}</h2>
