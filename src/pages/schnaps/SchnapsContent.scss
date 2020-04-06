@@ -38,24 +38,28 @@
   }
 
   .body {
-    .bubble {
-      border-radius: 50%;
-    }
-
-    h2, h3, p {
-      margin: unset;
-      padding: unset;
-    }
-
-    .orientation-left {
-      h2, h3, p {
-        text-align: left;
+    .item-row {
+      .bubble {
+        border-radius: 50%;
       }
-    }
 
-    .orientation-right {
       h2, h3, p {
-        text-align: right;
+        margin: unset;
+        padding: unset;
+      }
+
+      &.un-even {
+        h2, h3, p {
+          text-align: left;
+        }
+      }
+
+      &.even {
+        flex-direction: row-reverse;
+
+        h2, h3, p {
+          text-align: right;
+        }
       }
     }
   }

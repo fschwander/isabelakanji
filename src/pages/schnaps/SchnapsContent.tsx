@@ -11,57 +11,73 @@ interface SchnapsContentProps {
   scrollTop: number
 }
 
+interface ProductItemInterface {
+  img: string,
+  header: string,
+  text: Array<string>
+}
+
 export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
-  const headerTextRef: RefObject<HTMLDivElement> = createRef();
+    const headerTextRef: RefObject<HTMLDivElement> = createRef();
 
-  return (
-    <div className='SchnapsContent'>
-      <div className='header'>
-        <div className={'header-img-container'}>
-          <img className={'back'} src={headerImgBack} alt={'Hintergrundbild'}/>
-          <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}
-               style={{transform: `scale(${props.scrollTop / 3000 + 1})`}}/>
+    const productItems: Array<ProductItemInterface> = [
+      {
+        img: bottleIva,
+        header: 'Iva',
+        text: [
+          'Hergestellt aus selbstgepflückter Schafgarbe',
+          '21%, 3.75dl',
+          '39.–'
+        ]
+      },
+      {
+        img: bottleArven,
+        header: 'Arvenschnaps',
+        text: [
+          'Hergestellt aus selbstgepflückter Schafgarbe',
+          '21%, 3.75dl',
+          '39.–'
+        ]
+      }
+    ];
+
+    return (
+      <div className='SchnapsContent'>
+        <div className='header'>
+          <div className={'header-img-container'}>
+            <img className={'back'} src={headerImgBack} alt={'Hintergrundbild'}/>
+            <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}
+                 style={{transform: `scale(${props.scrollTop / 3000 + 1})`}}/>
+          </div>
+
+          <div className={'header-text-container'} ref={headerTextRef}>
+            <h1>Schnaps aus Savognin</h1>
+            <h2>selbstgemacht & lecker</h2>
+          </div>
         </div>
 
-        <div className={'header-text-container'} ref={headerTextRef}>
-          <h1>Schnaps aus Savognin</h1>
-          <h2>selbstgemacht & lecker</h2>
+        <Container className={'body'}>
+          {productItems.map((item: ProductItemInterface, i: number) => {
+            return (
+              <Row className={`item-row ${i % 2 === 0 ? 'even' : 'un-even'}`} key={item.header + i}>
+                <Col sm={0} md={1}/>
+                <Col sm={12} md={5}>
+                  <img className={'bubble'} src={item.img} alt={`Bild: ${item.header}`}/>
+                </Col>
+                <Col sm={12} md={5} className={'vertical-container'}>
+                  <h2>{item.header}</h2>
+                  {item.text.map(text => <p key={text}>{text}</p>)}
+                </Col>
+                <Col sm={0} md={1}/>
+              </Row>
+            )
+          })}
+        </Container>
+
+        <div className={'footer'}>
+          <img src={mountainImg} alt={'Hintergrundbild'}/>
         </div>
       </div>
-
-      <Container className={'body'}>
-        <Row>
-          <Col sm={0} md={1}/>
-          <Col sm={12} md={5}>
-            <img className={'bubble'} src={bottleIva} alt={'Schnapsbild'}/>
-          </Col>
-          <Col sm={12} md={5} className={'vertical-container orientation-left'}>
-            <h2>Iva</h2>
-            <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
-            <p>21%, 3.75dl</p>
-            <p>39.–</p>
-          </Col>
-          <Col sm={0} md={1}/>
-        </Row>
-        <Row>
-          <Col sm={0} md={1}/>
-          <Col sm={12} md={5} className={'vertical-container orientation-right'}>
-            <h2>Arvenschnaps</h2>
-            <p>Hergestellt aus selbstgepflückter Schafgarbe</p>
-            <p>21%, 3.75dl</p>
-            <p>39.–</p>
-          </Col>
-          <Col sm={12} md={5}>
-            <img className={'bubble'} src={bottleArven} alt={'Schnapsbild'}/>
-          </Col>
-          <Col sm={0} md={1}/>
-        </Row>
-      </Container>
-
-      <div className={'footer'}>
-        <img src={mountainImg} alt={'Hintergrundbild'}/>
-      </div>
-
-    </div>
-  )
-};
+    )
+  }
+;
