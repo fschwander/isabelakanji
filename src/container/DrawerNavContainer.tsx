@@ -100,7 +100,7 @@ export const DrawerNavContainer: React.FC = () => {
                      minHeight: calcDrawerLabelHeight()
                    }}
                    onClick={() => setActiveDrawer(i)}>
-                <h4 className={'link'}>{item.text}</h4>
+                <h4 className={`link ${activeIndex === -1 ? 'highlighted' : ''}`}>{item.text}</h4>
               </div>
 
               <div className={'drawer-page-container'}>

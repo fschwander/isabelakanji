@@ -44,16 +44,35 @@ $breakPoint: 800px;
       transition: min-width $animDuration ease-in-out,
       min-height $animDuration ease-in-out;
 
-      @media screen and (min-width: $breakPoint){
-        &:hover .link {
-          cursor: unset;
-          border-left: 2px solid black;
+      &:hover .link {
+        border-left: 2px solid black;
+      }
+
+      .link {
+        margin: 0 4px 0 0;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        padding-top: 1rem;
+        transition: font-size $animDuration ease-in-out;
+        border-left: 2px solid transparent;
+
+
+        &.highlighted {
+          font-size: 6vh;
         }
       }
 
-      h4 {
-        margin-right: 4px;
-        border-left: 2px solid transparent;
+      @media screen and (max-width: $breakPoint) {
+        .link {
+          font-size: 20px;
+          border-left: unset;
+          margin: unset;
+          padding-top: 0.5rem;
+
+          &.highlighted {
+            font-size: 5vh;
+          }
+        }
       }
     }
 
