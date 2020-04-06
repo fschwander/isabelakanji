@@ -10,11 +10,11 @@ interface NavItem {
 }
 
 export const DrawerNavContainer: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const breakPoint = 800;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth > breakPoint);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
-  const breakPoint = 800;
   const navItems: Array<NavItem> = [
     {
       text: 'Schnaps',

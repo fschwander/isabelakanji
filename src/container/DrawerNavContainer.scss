@@ -56,7 +56,6 @@ $breakPoint: 800px;
         transition: font-size $animDuration ease-in-out;
         border-left: 2px solid transparent;
 
-
         &.highlighted {
           font-size: 6vh;
         }
@@ -71,6 +70,10 @@ $breakPoint: 800px;
 
           &.highlighted {
             font-size: 5vh;
+          }
+
+          &:hover {
+            border-left: 2px solid transparent;
           }
         }
       }

@@ -29,7 +29,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         </div>
       </div>
 
-      <Container className={'Content'}>
+      <Container className={'body'}>
         <Row>
           <Col sm={0} md={1}/>
           <Col sm={12} md={5}>
