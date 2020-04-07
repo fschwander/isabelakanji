@@ -4,7 +4,8 @@ import * as d3 from "d3-scale";
 import {ReactComponent as LogoSvg} from "../../../res/imgs/logo.svg";
 
 interface HeaderInterface {
-  scrollTop: number
+  scrollTop: number,
+  windowHeight: string
 }
 
 export const Header: React.FC<HeaderInterface> = props => {
@@ -51,7 +52,7 @@ export const Header: React.FC<HeaderInterface> = props => {
   return (
     <div className='Header'
          ref={rootElement}
-         style={{minHeight: `${window.innerHeight}px`}}>
+         style={{minHeight: `${props.windowHeight}`}}>
       <div className='logo-container' ref={logoContainerElement}>
         <LogoSvg className={'logo-svg'}/>
       </div>

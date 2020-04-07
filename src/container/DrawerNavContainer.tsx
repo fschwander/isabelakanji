@@ -11,20 +11,25 @@ interface NavItem {
 
 export const DrawerNavContainer: React.FC = () => {
   const breakPoint = 800;
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth > breakPoint);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
+
+  const getWindowHeight = () => {
+    return (isSmallScreen ? window.innerHeight - (2 * registerHeight) : window.innerHeight) + 'px';
+  }
+
   const navItems: Array<NavItem> = [
-    {
-      text: 'Schnaps',
-      color: '#DDE2B5',
-      component: <SchnapsPage/>
-    },
     {
       text: 'Yoga',
       color: '#93BED5',
-      component: <YogaPage/>
+      component: <YogaPage windowHeight={getWindowHeight()}/>
+    },
+    {
+      text: 'Produkte',
+      color: '#DDE2B5',
+      component: <SchnapsPage windowHeight={getWindowHeight()}/>
     }
   ];
 

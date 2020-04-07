@@ -2,23 +2,50 @@
 
 .SchnapsContent {
 
+  a {
+    border-color: $clr_yellow_dark;
+
+    &:hover {
+      border-color: $clr_yellow;
+    }
+  }
+
   img {
     width: 100%;
   }
 
   .header {
-    margin: auto;
     max-width: 900px;
+    margin: auto;
 
     .header-img-container {
       position: relative;
       overflow: hidden;
 
+      img {
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        position: absolute;
+      }
+
+      .back {
+        animation: fade-in 3s ease-in;
+
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+
       .front {
         transition: transform .3s ease-out;
         top: 0;
         left: 0;
-        position: absolute;
         transform-origin: bottom center;
       }
     }
@@ -38,8 +65,12 @@
   }
 
   .body {
+    max-width: 900px;
+    margin: auto;
+
     .item-row {
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
 
       h2, h3, p {
         margin: unset;
@@ -62,11 +93,17 @@
 
       p {
         padding: 0 .6rem;
+        line-height: 1.6rem;
+        margin-top: .3rem;
+        @media screen and (max-width: 800px) {
+          padding: unset;
+        }
       }
 
       &.un-even {
         h2, h3, p {
           align-self: flex-start;
+          text-align: left;
         }
       }
 
@@ -75,12 +112,29 @@
 
         h2, h3, p {
           align-self: flex-end;
+          text-align: right;
         }
       }
     }
   }
 
-  .Footer {
+  .footer {
+    margin-top: 3rem;
 
+    .order-container {
+      padding: .5rem 0;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      background-color: $clr_yellow_light;
+
+      p {
+        margin: auto;
+      }
+    }
+
+    img {
+      object-position: top;
+      object-fit: cover;
+    }
   }
 }

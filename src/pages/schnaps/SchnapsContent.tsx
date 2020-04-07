@@ -8,7 +8,8 @@ import headerImgFront from '../../res/imgs/bottles_front.png'
 import headerImgBack from '../../res/imgs/bottles_back.png';
 
 interface SchnapsContentProps {
-  scrollTop: number
+  scrollTop: number,
+  windowHeight: string
 }
 
 interface ProductItemInterface {
@@ -43,8 +44,8 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
 
     return (
       <div className='SchnapsContent'>
-        <div className='header'>
-          <div className={'header-img-container'}>
+        <div className='header' style={{minHeight: props.windowHeight}}>
+          <div className={'header-img-container'} style={{minHeight: `calc(${props.windowHeight} * 0.8)`}}>
             <img className={'back'} src={headerImgBack} alt={'Hintergrundbild'}/>
             <img className={'front'} src={headerImgFront} alt={'Vordergrundbild'}
                  style={{transform: `scale(${props.scrollTop / 3000 + 1})`}}/>
@@ -54,12 +55,17 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
             <h1>Schnaps aus Savognin</h1>
             <h2>selbstgemacht & lecker</h2>
           </div>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
         </div>
 
         <Container className={'body'}>
+          <Row>
+            <Col>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+              dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+              clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+            </Col>
+          </Row>
+
           {productItems.map((item: ProductItemInterface, i: number) => {
             return (
               <Row className={`item-row ${i % 2 === 0 ? 'even' : 'un-even'}`} key={item.header + i}>
@@ -75,13 +81,13 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
               </Row>
             )
           })}
-          <Row>
-            <Col><p>Bestellungen können gerne per <a href='mailto:yoga@isabelakanji.ch'>E-Mail</a> gemacht werden. Danke!</p></Col>
-          </Row>
         </Container>
 
         <div className={'footer'}>
-          <img src={mountainImg} alt={'Hintergrundbild'}/>
+          <div className={'order-container'}>
+            <p>Bestellungen können gerne per <a href='mailto:yoga@isabelakanji.ch'>E-Mail</a> gemacht werden. Danke!</p>
+          </div>
+          <img src={mountainImg} alt={'Hintergrundbild'} style={{maxHeight: `calc(${props.windowHeight} * 0.6)`}}/>
         </div>
       </div>
     )

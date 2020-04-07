@@ -5,7 +5,11 @@ import * as d3 from "d3-scale";
 import {Footer} from './components/Footer';
 import {Content} from './components/Content';
 
-export const YogaPage: React.FC = () => {
+interface YogaPageProps {
+  windowHeight: string
+}
+
+export const YogaPage: React.FC<YogaPageProps> = props => {
   const [scrollTop, setScrollTop] = useState(0);
   const rootRef: RefObject<HTMLDivElement> = createRef();
   const [backgroundGradient, setBackgroundGradient] = useState()
@@ -43,7 +47,7 @@ export const YogaPage: React.FC = () => {
          onScroll={handleScroll}
          style={{backgroundImage: backgroundGradient}}>
 
-      <Header scrollTop={scrollTop}/>
+      <Header scrollTop={scrollTop} windowHeight={props.windowHeight}/>
       <div className='content-container'>
         <Content/>
       </div>

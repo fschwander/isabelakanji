@@ -41,6 +41,7 @@ html {
       padding-bottom: 0.1em;
       border-bottom: 0.2em solid white;
       text-decoration: none;
+      transition: .1s ease-in-out;
 
       &:hover {
         color: $clr_red_dark;
