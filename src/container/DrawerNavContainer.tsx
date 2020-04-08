@@ -11,8 +11,8 @@ interface NavItem {
 
 export const DrawerNavContainer: React.FC = () => {
   const breakPoint = 800;
-  const [activeIndex, setActiveIndex] = useState(1);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth > breakPoint);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [isSmallScreen, setIsSmallScreen] = useState(() => window.innerWidth < breakPoint);
   const [registerWidth, setRegisterWidth] = useState(0);
   const registerHeight = 50;
 
