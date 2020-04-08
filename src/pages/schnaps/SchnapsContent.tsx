@@ -52,7 +52,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           </div>
 
           <div className={'header-text-container'} ref={headerTextRef}>
-            <h1>Schnaps aus Savognin</h1>
+            <h1>Produkte aus Savognin</h1>
             <h2>selbstgemacht & lecker</h2>
           </div>
         </div>
@@ -60,9 +60,11 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         <Container className={'body'}>
           <Row>
             <Col>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-              dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-              clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
             </Col>
           </Row>
 
@@ -74,8 +76,10 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
                   <img src={item.img} alt={`Bild: ${item.header}`}/>
                 </Col>
                 <Col sm={12} md={5} className={'vertical-container'}>
-                  <h2>{item.header}</h2>
-                  {item.text.map(text => <p key={text}>{text}</p>)}
+                  <div className={'text-container'}>
+                    <h2>{item.header}</h2>
+                    {item.text.map(text => <p key={text}>{text}</p>)}
+                  </div>
                 </Col>
                 <Col sm={0} md={1}/>
               </Row>
@@ -85,7 +89,8 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
 
         <div className={'footer'}>
           <div className={'order-container'}>
-            <p>Bestellungen können gerne per <a href='mailto:yoga@isabelakanji.ch'>E-Mail</a> gemacht werden. Danke!</p>
+            <h2>Bestellungen</h2>
+            <p>Jederzeit gerne per <a href='mailto:yoga@isabelakanji.ch'>E-Mail</a>. Danke!</p>
           </div>
           <img src={mountainImg} alt={'Hintergrundbild'} style={{maxHeight: `calc(${props.windowHeight} * 0.6)`}}/>
         </div>

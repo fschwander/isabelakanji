@@ -72,12 +72,6 @@
       margin-top: 1rem;
       margin-bottom: 1rem;
 
-      h2, h3, p {
-        margin: unset;
-        padding: unset;
-        width: fit-content;
-      }
-
       img {
         max-width: 80vw;
         display: flex;
@@ -85,18 +79,33 @@
         margin: 1rem auto;
       }
 
-      h2 {
-        background-color: $clr_yellow_light;
-        width: fit-content;
-        padding: .2rem .6rem;
-      }
+      .text-container {
+        display: flex;
+        flex-direction: column;
 
-      p {
-        padding: 0 .6rem;
-        line-height: 1.6rem;
-        margin-top: .3rem;
-        @media screen and (max-width: 800px) {
+        h2, h3, p {
+          margin: unset;
           padding: unset;
+          width: fit-content;
+        }
+
+        h2 {
+          background-color: $clr_yellow_light;
+          width: fit-content;
+          padding: .2rem .6rem;
+        }
+
+        p {
+          padding: 0 .6rem;
+          line-height: 1.6rem;
+          margin-top: .3rem;
+          @media screen and (max-width: 800px) {
+            padding: unset;
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          margin-top: -2.5rem;
         }
       }
 
@@ -119,6 +128,7 @@
   }
 
   .footer {
+    position: relative;
     margin-top: 3rem;
 
     .order-container {
@@ -127,8 +137,22 @@
       margin-bottom: 4rem;
       background-color: $clr_yellow_light;
 
+      h2 {
+        margin: unset;
+        padding: unset;
+      }
+
       p {
         margin: auto;
+      }
+
+      @media screen and (min-width: 800px) {
+        position: absolute;
+        padding: 2rem 3rem;
+        margin: unset;
+        left: 50%;
+        bottom: 20%;
+        transform: translateX(-50%);
       }
     }
 
