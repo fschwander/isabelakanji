@@ -46,6 +46,10 @@ $breakPoint: 800px;
 
       &:hover .link {
         border-left: 2px solid #333;
+
+        @media screen and (max-width: $breakPoint) {
+          border-left: unset;
+        }
       }
 
       .link {
@@ -54,7 +58,6 @@ $breakPoint: 800px;
         letter-spacing: 1rem;
         padding-top: 1rem;
         transition: font-size $animDuration ease-in-out;
-        border-left: 2px solid transparent;
 
         &.highlighted {
           font-size: 6vh;
@@ -70,10 +73,6 @@ $breakPoint: 800px;
 
           &.highlighted {
             font-size: 5vh;
-          }
-
-          &:hover, &:focus {
-            border-left: 2px solid transparent;
           }
         }
       }
