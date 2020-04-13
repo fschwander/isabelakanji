@@ -1,7 +1,12 @@
 @import 'variables';
 
 html {
-  scroll-behavior: smooth;
+
+  // hack to prevent body from being scrolled
+  &, body {
+    height: 100%;
+    overflow: hidden;
+  }
 
   body {
     margin: 0;

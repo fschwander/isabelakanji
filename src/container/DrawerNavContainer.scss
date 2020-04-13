@@ -72,7 +72,7 @@ $breakPoint: 800px;
             font-size: 5vh;
           }
 
-          &:hover {
+          &:hover, &:focus {
             border-left: 2px solid transparent;
           }
         }
